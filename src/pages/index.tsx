@@ -1,11 +1,7 @@
+import Header from '@/components/Header';
 import { css } from '@emotion/react';
 
-const titleStyle = css({
-  boxSizing: 'border-box',
-  width: 300,
-  height: 200,
-  color: 'red',
-});
+const titleStyle = css({});
 
 const subtitleStyle = css`
   box-sizing: border-box;
@@ -16,7 +12,7 @@ const subtitleStyle = css`
 export default function Home() {
   return (
     <div css={titleStyle}>
-      <div>hello</div>
+      <Header />
     </div>
   );
 }
