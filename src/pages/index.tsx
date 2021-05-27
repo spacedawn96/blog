@@ -1,18 +1,15 @@
+import Categories from '@/components/Categories';
 import Header from '@/components/Header';
 import { css } from '@emotion/react';
 
-const titleStyle = css({});
+export type HomeProps = {};
 
-const subtitleStyle = css`
-  box-sizing: border-box;
-  width: 100px;
-  height: 60px;
-`;
-
-export default function Home() {
+export default function Home({}: HomeProps) {
   return (
     <div css={titleStyle}>
       <Header />
+      <Categories />
     </div>
   );
 }
+const titleStyle = css({});
