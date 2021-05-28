@@ -9,6 +9,7 @@ export default function Home({}: HomeProps) {
     <div css={titleStyle}>
       <Header />
       <Categories />
+      <div>test</div>
     </div>
   );
 }
