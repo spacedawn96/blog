@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
 import Image from 'next/image';
+import Icon from '../Icon';
 
 export default function Header() {
   return (
-    <section css={HeaderBlock}>
+    <header css={HeaderBlock}>
       <nav css={Nav}>
         <section css={NavList}>
           <span>POSTS</span>
@@ -11,19 +12,17 @@ export default function Header() {
           <span>
             <Image src="/signature.png" alt="signature" width={320} height={113} />
           </span>
-          <span>GITHUB</span>
-          <span>THINK</span>
+          <Icon />
         </section>
       </nav>
-    </section>
+    </header>
   );
 }
 
 const HeaderBlock = css({
   display: 'flex',
-  height: '10rem',
+  padding: '4rem 0  6rem 0',
   alignItems: 'center',
-  padding: '1rem 0 4rem 0',
 });
 
 const Nav = css({
@@ -45,5 +44,5 @@ const NavList = css({
   textTransform: 'uppercase',
   fontFamily: '"Rubik", "sans-serif"',
   transition: 'all .3s ease',
-  fontSize: '1rem',
+  fontSize: '18px',
 });

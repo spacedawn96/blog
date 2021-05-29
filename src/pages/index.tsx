@@ -1,4 +1,5 @@
 import Categories from '@/components/Categories';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { css } from '@emotion/react';
 
@@ -9,7 +10,7 @@ export default function Home({}: HomeProps) {
     <div css={titleStyle}>
       <Header />
       <Categories />
-      <div>test</div>
+      <Footer />
     </div>
   );
 }
