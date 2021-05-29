@@ -6,18 +6,13 @@ export default function Icon() {
   return (
     <>
       <span>
-        <FaGithub />
+        <FaGithub size={20} />
       </span>
       <span>
-        <SiGmail />
+        <SiGmail size={20} />
       </span>
     </>
   );
 }
 
-const IconBlock = css({
-  span: {
-    ':nth-of-type(1)': { flexGrow: 0.3 },
-    ':nth-of-type(2)': { flexGrow: 3 },
-  },
-});
+const IconBlock = css({});

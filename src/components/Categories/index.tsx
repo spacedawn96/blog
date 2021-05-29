@@ -12,6 +12,11 @@ export default function Categories({}: CategoriesProps) {
       <span>React</span>
       <span>Node js</span>
       <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
     </section>
   );
 }

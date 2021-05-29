@@ -21,7 +21,7 @@ export default function Header() {
 
 const HeaderBlock = css({
   display: 'flex',
-  padding: '4rem 0  6rem 0',
+  padding: '4rem 0  4rem 0',
   alignItems: 'center',
 });
 
