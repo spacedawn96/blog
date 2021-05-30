@@ -7,11 +7,11 @@ export default function Header() {
     <header css={HeaderBlock}>
       <nav css={Nav}>
         <section css={NavList}>
-          <span>POSTS</span>
-          <span>ABOUT</span>
-          <span>
+          <div>POSTS</div>
+          <div>ABOUT</div>
+          <div>
             <Image src="/signature.png" alt="signature" width={320} height={113} />
-          </span>
+          </div>
           <Icon />
         </section>
       </nav>
@@ -32,7 +32,7 @@ const Nav = css({
 const NavList = css({
   display: 'flex',
   alignItems: 'center',
-  span: {
+  div: {
     ':nth-of-type(1)': { flexGrow: 0.3 },
     ':nth-of-type(2)': { flexGrow: 3 },
     ':nth-of-type(3)': { flexGrow: 1 },

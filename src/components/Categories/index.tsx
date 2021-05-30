@@ -6,21 +6,21 @@ export type CategoriesProps = {};
 
 export default function Categories({}: CategoriesProps) {
   return (
-    <section css={CategoriesStyle}>
-      <span>Javascript</span>
-      <span>Typescript</span>
-      <span>React</span>
-      <span>Node js</span>
-      <span>Database</span>
-      <span>Database</span>
-      <span>Database</span>
-      <span>Database</span>
-      <span>Database</span>
-      <span>Database</span>
-    </section>
+    <main css={CategoriesStyle}>
+      <div>Javascript</div>
+      <div>Typescript</div>
+      <div>React</div>
+      <div>Node js</div>
+      <div>Database</div>
+      <div>Database</div>
+      <div>Database</div>
+      <div>Database</div>
+      <div>Database</div>
+      <div>Database</div>
+    </main>
   );
 }
-const CategoriesStyle = css({
+export const CategoriesStyle = css({
   display: 'flex',
   flexDirection: 'column',
   color: '#292929',

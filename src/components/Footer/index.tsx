@@ -8,16 +8,16 @@ export default function Footer({}: FooterProps) {
   return (
     <>
       <footer css={FooterStyle}>
-        <section css={FooterLeft}>
-          <article css={FooterArticle}>
+        <div css={FooterLeft}>
+          <div css={FooterContainer}>
             <div css={FooterIcon}>
               <Icon />
             </div>
-            <div css={FooterEamilFont}>spacedawn96@gmail.com</div>
-            <div css={FooterCopyRight}> © 2021. All Posts copyright of Spaceadwn96 </div>
-          </article>
-        </section>
-        <section css={FooterWithImg}>
+            <p css={FooterEamilFont}>spacedawn96@gmail.com</p>
+            <p css={FooterCopyRight}> © 2021. All Posts copyright of Spaceadwn96 </p>
+          </div>
+        </div>
+        <div css={FooterWithImg}>
           <img src="/footer.png" className="avatar" />
           <style jsx global>{`
             .avatar {
@@ -25,7 +25,7 @@ export default function Footer({}: FooterProps) {
               height: auto;
             }
           `}</style>
-        </section>
+        </div>
         <p css={FooterAsideContainer}> Web design by Spacedawn96</p>
       </footer>
     </>
@@ -40,13 +40,13 @@ const FooterStyle = css({
 
 const FooterIcon = css({
   display: 'flex',
-  span: {
+  div: {
     ':nth-of-type(1)': { flexGrow: 0.15 },
     ':nth-of-type(2)': { flexGrow: 0 },
   },
 });
 
-const FooterArticle = css({
+const FooterContainer = css({
   marginBottom: '12%',
 });
 
@@ -64,7 +64,7 @@ const FooterLeft = css({
   flexDirection: 'column',
   justifyContent: 'flex-end',
 
-  div: {
+  p: {
     ':nth-of-type(1)': { marginBottom: '12%' },
     ':nth-of-type(2)': { marginBottom: '12%' },
   },
