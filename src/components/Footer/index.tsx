@@ -13,12 +13,14 @@ export default function Footer({}: FooterProps) {
             <div css={FooterIcon}>
               <Icon />
             </div>
+            <div css={FooterAsideContainer}> Web design by Spacedawn96</div>
             <p css={FooterEamilFont}>spacedawn96@gmail.com</p>
             <p css={FooterCopyRight}> © 2021. All Posts copyright of Spaceadwn96 </p>
           </div>
         </div>
         <div css={FooterWithImg}>
           <img src="/footer.png" className="avatar" />
+
           <style jsx global>{`
             .avatar {
               max-width: 50%;
@@ -26,7 +28,6 @@ export default function Footer({}: FooterProps) {
             }
           `}</style>
         </div>
-        <p css={FooterAsideContainer}> Web design by Spacedawn96</p>
       </footer>
     </>
   );
@@ -79,6 +80,8 @@ const FooterWithImg = css({
 const FooterAsideContainer = css({
   display: 'flex',
   transform: 'rotate(-90deg)',
+  position: 'absolute',
   fontSize: '0.75rem',
   alignItems: 'flex-end',
+  right: '0',
 });
