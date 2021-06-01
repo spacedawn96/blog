@@ -10,9 +10,7 @@ export type HomeProps = {};
 export default function Home({}: HomeProps) {
   return (
     <div css={titleStyle}>
-      <ArticleList />
-      <Previous />
-      <Footer />
+      <Header />
     </div>
   );
 }

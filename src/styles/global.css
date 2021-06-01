@@ -11,9 +11,19 @@ body {
   background-image:url('../../public//background.png') ;
   background-size: 100px 100px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  margin: 0 6% 0 12%;
+  margin: 0 6% 0 10%;
   
 }
 li{
   list-style: none;
+}
+
+a {
+  color: '#292929';
+  text-decoration: none; /* no underline */
+}
+
+
+a:visited {
+  color: #292929;
 }

@@ -5,12 +5,16 @@ import { SiGmail } from 'react-icons/si';
 export default function Icon() {
   return (
     <>
-      <div>
-        <FaGithub size={20} />
-      </div>
-      <div>
-        <SiGmail size={20} />
-      </div>
+      <li>
+        <a>
+          <FaGithub size={20} />
+        </a>
+      </li>
+      <li>
+        <a>
+          <SiGmail size={20} />
+        </a>
+      </li>
     </>
   );
 }
