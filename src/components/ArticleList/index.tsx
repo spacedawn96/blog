@@ -6,7 +6,6 @@ export type ArticleListProps = {};
 export default function ArticleList({}: ArticleListProps) {
   return (
     <>
-      <Header />
       <main css={ArticleContainer}>
         <section css={ArticleListStyle}>
           <article>

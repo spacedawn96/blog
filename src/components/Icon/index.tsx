@@ -1,22 +1,27 @@
 import { css } from '@emotion/react';
 import { FaGithub } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
+import Link from 'next/link';
 
 export default function Icon() {
   return (
     <>
-      <li>
-        <a>
+      <li css={IconBlock}>
+        <Link href="https://github.com/spacedawn96">
           <FaGithub size={20} />
-        </a>
+        </Link>
       </li>
-      <li>
-        <a>
+      <li css={IconBlock}>
+        <Link href="/">
           <SiGmail size={20} />
-        </a>
+        </Link>
       </li>
     </>
   );
 }
 
-const IconBlock = css({});
+const IconBlock = css({
+  '&:hover': {
+    color: '#ff4400',
+  },
+});

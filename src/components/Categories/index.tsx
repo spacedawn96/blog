@@ -7,16 +7,16 @@ export type CategoriesProps = {};
 export default function Categories({}: CategoriesProps) {
   return (
     <main css={CategoriesStyle}>
-      <div>Javascript</div>
-      <div>Typescript</div>
-      <div>React</div>
-      <div>Node js</div>
-      <div>Database</div>
-      <div>Database</div>
-      <div>Database</div>
-      <div>Database</div>
-      <div>Database</div>
-      <div>Database</div>
+      <span>Javascript</span>
+      <span>Typescript</span>
+      <span>React</span>
+      <span>Node js</span>
+      <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
+      <span>Database</span>
     </main>
   );
 }
@@ -33,4 +33,10 @@ export const CategoriesStyle = css({
   animationTimingFunction: 'ease',
   marginBottom: '8px',
   fontWeight: 600,
+
+  span: {
+    '&:hover': {
+      color: '#ff4400',
+    },
+  },
 });

@@ -14,8 +14,10 @@ export default function Footer({}: FooterProps) {
               <Icon />
             </div>
             <div css={FooterAsideContainer}> Web design by Spacedawn96</div>
-            <p css={FooterEamilFont}>spacedawn96@gmail.com</p>
-            <p css={FooterCopyRight}> © 2021. All Posts copyright of Spaceadwn96 </p>
+            <ul>
+              <li css={FooterEamilFont}>spacedawn96@gmail.com</li>
+              <li css={FooterCopyRight}> © 2021. All Posts copyright of Spaceadwn96 </li>
+            </ul>
           </div>
         </div>
         <div css={FooterWithImg}>
@@ -41,7 +43,7 @@ const FooterStyle = css({
 
 const FooterIcon = css({
   display: 'flex',
-  div: {
+  li: {
     ':nth-of-type(1)': { flexGrow: 0.15 },
     ':nth-of-type(2)': { flexGrow: 0 },
   },
@@ -65,7 +67,7 @@ const FooterLeft = css({
   flexDirection: 'column',
   justifyContent: 'flex-end',
 
-  p: {
+  li: {
     ':nth-of-type(1)': { marginBottom: '12%' },
     ':nth-of-type(2)': { marginBottom: '12%' },
   },

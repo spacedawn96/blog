@@ -11,6 +11,7 @@ export default function Home({}: HomeProps) {
   return (
     <div css={titleStyle}>
       <Header />
+      <Categories />
     </div>
   );
 }

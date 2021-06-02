@@ -1,10 +1,45 @@
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import Icon from '../Icon';
+import { useRouter } from 'next/router';
+import { useTrail, a } from '@react-spring/web';
+import { Trail } from '../Animation/Trail';
 
-export default function Header() {
+export type HeadereProps = {};
+
+export type LinkeProps = {
+  href: any;
+  children: any;
+};
+
+const Link = (props: LinkeProps) => {
+  const router = useRouter();
+
+  return (
+    <a
+      href="#"
+      onClick={e => {
+        e.preventDefault();
+        // typically you want to use `next/link` for this usecase
+        // but this example shows how you can also access the router
+        // and use it manually
+        router.push(props.href);
+      }}>
+      {props.children}
+      <style jsx>{`
+        a {
+          margin-right: 10px;
+        }
+      `}</style>
+    </a>
+  );
+};
+
+export default function Header(props: HeadereProps) {
+  const [open, set] = useState(true);
+  const router = useRouter();
+
   const [isSelect, setIsSelect] = useState(false);
 
   return (
@@ -13,12 +48,26 @@ export default function Header() {
         <ul css={NavList}>
           <li>
             <Link href="/">
-              <a>POSTS</a>
+              <a
+                style={{
+                  color: router.asPath == '/' ? '#ff4400' : '#292929',
+                  borderBottom: router.asPath == '/' ? '4px solid #ff4400' : '',
+                  paddingBottom: router.asPath == '/' ? '0.3rem' : '',
+                }}>
+                POST
+              </a>
             </Link>
           </li>
           <li>
-            <Link href="/">
-              <a>ABOUT</a>
+            <Link href="/about">
+              <a
+                style={{
+                  color: router.asPath == '/about' ? '#ff4400' : '#292929',
+                  borderBottom: router.asPath == '/about' ? '4px solid #ff4400' : '',
+                  paddingBottom: router.asPath == '/about' ? '0.3rem' : '',
+                }}>
+                ABOUT
+              </a>
             </Link>
           </li>
           <li>
@@ -44,14 +93,14 @@ const HeaderBlock = css({
 
 const Nav = css({
   width: '100%',
+});
 
-  a: {
-    '&:hover': {
-      color: '#ff4400',
-      borderBottom: '4px solid #ff4400',
-      paddingBottom: '0.3rem',
-    },
-  },
+const TextHover = css({
+  // '&:hover': {
+  //   color: '#ff4400',
+  //   borderBottom: '4px solid #ff4400',
+  //   paddingBottom: '0.3rem',
+  // },
 });
 
 const NavList = css({
