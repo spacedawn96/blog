@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app';
+import './global.css';
 // import '@/styles/global.css';
 import SelectContextProvider from '../lib/context';
 
