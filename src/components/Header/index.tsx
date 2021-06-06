@@ -45,40 +45,42 @@ export default function Header(props: HeadereProps) {
   return (
     <header css={HeaderBlock}>
       <nav css={Nav}>
-        <ul css={NavList}>
-          <li>
-            <Link href="/">
-              <a
-                style={{
-                  color: router.asPath == '/' ? '#ff4400' : '#292929',
-                  borderBottom: router.asPath == '/' ? '4px solid #ff4400' : '',
-                  paddingBottom: router.asPath == '/' ? '0.3rem' : '',
-                }}>
-                POST
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about">
-              <a
-                style={{
-                  color: router.asPath == '/about' ? '#ff4400' : '#292929',
-                  borderBottom: router.asPath == '/about' ? '4px solid #ff4400' : '',
-                  paddingBottom: router.asPath == '/about' ? '0.3rem' : '',
-                }}>
-                ABOUT
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>
-                <Image src="/signature.png" alt="signature" width={320} height={113} />
-              </a>
-            </Link>
-          </li>
-          <Icon />
-        </ul>
+        <Trail open={open}>
+          <ul css={NavList}>
+            <li>
+              <Link href="/">
+                <a
+                  style={{
+                    color: router.asPath == '/' ? '#ff4400' : '#292929',
+                    borderBottom: router.asPath == '/' ? '4px solid #ff4400' : '',
+                    paddingBottom: router.asPath == '/' ? '0.3rem' : '',
+                  }}>
+                  POST
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a
+                  style={{
+                    color: router.asPath == '/about' ? '#ff4400' : '#292929',
+                    borderBottom: router.asPath == '/about' ? '4px solid #ff4400' : '',
+                    paddingBottom: router.asPath == '/about' ? '0.3rem' : '',
+                  }}>
+                  ABOUT
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a>
+                  <Image src="/signature.png" alt="signature" width={320} height={113} />
+                </a>
+              </Link>
+            </li>
+            <Icon />
+          </ul>
+        </Trail>
       </nav>
     </header>
   );
@@ -86,13 +88,15 @@ export default function Header(props: HeadereProps) {
 
 const HeaderBlock = css({
   display: 'flex',
-  margin: '4rem 0  4rem 0',
+  marginTop: '4rem',
   alignItems: 'center',
   transition: 'all .3s ease',
 });
 
 const Nav = css({
   width: '100%',
+  marginBottom: '6rem',
+  zIndex: 22,
 });
 
 const TextHover = css({

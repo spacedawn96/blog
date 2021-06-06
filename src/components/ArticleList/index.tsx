@@ -9,8 +9,8 @@ export default function ArticleList({}: ArticleListProps) {
       <main css={ArticleContainer}>
         <section css={ArticleListStyle}>
           <article>
-            <span>hellozz</span>
-            <div>hello</div>
+            <h1>Javascript</h1>
+            <h2>hello</h2>
             <small>item</small>
             <div>hello</div>
             <small>item</small>
@@ -19,14 +19,23 @@ export default function ArticleList({}: ArticleListProps) {
         </section>
         <section css={ArticleListTitle}>
           <article>
-            <p>hello</p>
-            <small>item2</small>
-            <small>item2</small>
-            <div>hello2</div>
-            <small>item2</small>
-            <div>hello2</div>
-            <small>item2</small>
-            <div>hello2</div>
+            <p>
+              This was a dream project and an honor to represent Walt’s wonderful
+              creation: Mickey Mouse, an American icon. When I received the proposal from
+              the Walt Disney Company to paint 100 Mickey’s (in 2002), I packed up my
+              paints and brushes and flew to a little island in the Caribbean. Inspired by
+              nature’s colors — and the occasional plunge in the river — I returned two
+              weeks later with the first 21 mice. That was the easy part. The next 79 were
+              more challenging and took 16 months to finish. The challenge was to make
+              each one a different pose, style, or medium, as well as paying homage to the
+              history of Mickey Mouse.
+            </p>
+            <aside css={ArticleAside}>
+              <small>item2</small>
+              <small>item2</small>
+              <small>item2</small>
+              <small>item2</small>
+            </aside>
           </article>
         </section>
       </main>
@@ -50,9 +59,19 @@ const ArticleListStyle = css({
   animationName: 'bottomToTop',
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
-  fontWeight: 600,
   width: '50%',
   border: '1px solid pink',
+
+  h1: {
+    fontSize: '6.25rem',
+    marginBottom: '6rem',
+  },
+  h2: {
+    fontSize: '5.25rem',
+  },
+  small: {
+    fontSize: '4.25rem',
+  },
 });
 
 const ArticleListTitle = css({
@@ -68,11 +87,12 @@ const ArticleListTitle = css({
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
   fontWeight: 600,
-  border: '1px solid blue',
-  width: '50%',
+  width: '40%',
+  marginLeft: '10%',
 
   p: {
-    fontSize: '1.2rem',
+    fontSize: '1rem',
+    marginTop: '6rem',
   },
   span: {
     fontSize: '6.25rem',
@@ -81,4 +101,9 @@ const ArticleListTitle = css({
   small: {
     fontSize: '3rem',
   },
+});
+
+const ArticleAside = css({
+  display: 'flex',
+  flexDirection: 'column',
 });

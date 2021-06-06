@@ -1,15 +1,19 @@
+import About from '@/components/About';
 import ArticleList from '@/components/ArticleList';
+import Categories from '@/components/Categories';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { css } from '@emotion/react';
 
-export type AboutProps = {};
+export type AboutPageProps = {};
 
-export default function About({}: AboutProps) {
+export default function AboutPage({}: AboutPageProps) {
   return (
-    <div css={AboutStyle}>
+    <div css={AboutPageStyle}>
       <Header />
       <ArticleList />
+      <Footer />
     </div>
   );
 }
-const AboutStyle = css({});
+const AboutPageStyle = css({});
