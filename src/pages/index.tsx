@@ -9,10 +9,11 @@ import Head from 'next/head';
 export type HomeProps = {};
 
 export default function Home({}: HomeProps) {
+  console.log();
   return (
     <>
       <Header />
-      <ArticleList />
+      <Categories />
       <Footer />
     </>
   );

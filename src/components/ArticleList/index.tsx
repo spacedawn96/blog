@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import Header from '../Header';
+import dynamic from 'next/dynamic';
 
 export type ArticleListProps = {};
 
@@ -9,9 +9,9 @@ export default function ArticleList({}: ArticleListProps) {
       <main css={ArticleContainer}>
         <section>
           <article>
-            <div css={ArticleHeader}>
-              <h1>Javascript</h1>
-              <p>
+            <div css={ArticleWrapper}>
+              <h1 css={ArticleLeft}>Javascript</h1>
+              <p css={ArticleRight}>
                 This was a dream project and an honor to represent Walt’s wonderful
                 creation: Mickey Mouse, an American icon. When I received the proposal
                 from the Walt Disney Company to paint 100 Mickey’s (in 2002), I packed up
@@ -26,23 +26,29 @@ export default function ArticleList({}: ArticleListProps) {
             <div>
               <h2>1.hello</h2>
             </div>
-            <div>
-              <small>item</small>
-              <aside>
+            <div css={ArticleWrapper}>
+              <div css={ArticleLeft}>
+                <small>item</small>
                 <small>item2</small>
                 <small>item2</small>
                 <small>item2</small>
+              </div>
+              <aside css={ArticleRight}>
                 <small>item2</small>
               </aside>
             </div>
             <div>
-              <div>2.hello</div>
+              <h2>2.hello</h2>
             </div>
-            <div>
-              <small>item</small>
-              <aside>
+            <div css={ArticleWrapper}>
+              <div css={ArticleLeft}>
+                <small>item</small>
                 <small>item2</small>
                 <small>item2</small>
+                <small>item2</small>
+                <small>item2</small>
+              </div>
+              <aside css={ArticleRight}>
                 <small>item2</small>
                 <small>item2</small>
               </aside>
@@ -56,70 +62,45 @@ export default function ArticleList({}: ArticleListProps) {
 
 const ArticleContainer = css({
   display: 'flex',
-  border: '1px solid red',
-});
 
-const ArticleHeader = css({
-  display: 'flex',
-  border: '1px solid red',
-});
-
-const ArticleListStyle = css({
-  display: 'flex',
-  flexDirection: 'column',
-  color: '#292929',
-  fontFamily: '"Rubik", "sans-serif"',
-  fontSize: '6.25rem',
   animationDelay: '.2s',
   animationDuration: '.8s',
   animationName: 'bottomToTop',
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
-  width: '50%',
-  border: '1px solid pink',
 
   h1: {
     fontSize: '6.25rem',
-    marginBottom: '6rem',
+  },
+  p: {
+    fontSize: '1rem',
+    marginTop: '10%',
   },
   h2: {
     fontSize: '5.25rem',
   },
+
   small: {
-    fontSize: '4.25rem',
+    fontSize: '3rem',
   },
 });
 
-// const ArticleListTitle = css({
-//   display: 'flex',
-//   position: 'relative',
-//   flexDirection: 'column',
-//   color: '#292929',
-//   fontFamily: '"Rubik", "sans-serif"',
-//   fontSize: '6.25rem',
-//   animationDelay: '.2s',
-//   animationDuration: '.8s',
-//   animationName: 'bottomToTop',
-//   animationFillMode: 'both',
-//   animationTimingFunction: 'ease',
-//   fontWeight: 600,
-//   width: '40%',
-//   marginLeft: '10%',
+const ArticleWrapper = css({
+  display: 'flex',
 
-//   p: {
-//     fontSize: '1rem',
-//     marginTop: '6rem',
-//   },
-//   span: {
-//     fontSize: '6.25rem',
-//   },
+  color: '#292929',
+});
 
-//   small: {
-//     fontSize: '3rem',
-//   },
-// });
+const ArticleLeft = css({
+  width: '50%',
 
-// const ArticleAside = css({
-//   display: 'flex',
-//   flexDirection: 'column',
-// });
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const ArticleRight = css({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '50%',
+  // marginLeft: '10%',
+});

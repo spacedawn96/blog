@@ -1,7 +1,7 @@
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import { SelectContext } from '../../lib/context';
 import { useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
-import Link from 'next/link';
+import styles from './index.module.css';
 
 export type CategoriesProps = {};
 
@@ -145,7 +145,7 @@ export default function Categories({}: CategoriesProps) {
           />
         ))}
       </div>
-      <div css={MediaContainer}>
+      {/* <div css={MediaContainer}>
         {initialState?.filterList.map((title, index) => {
           const isActive = index == activeIndex;
           const xPos = isActive ? x : 0;
@@ -161,7 +161,7 @@ export default function Categories({}: CategoriesProps) {
             />
           );
         })}
-      </div>
+      </div> */}
     </main>
   );
 }
@@ -192,6 +192,15 @@ export const ProjectList = css({
   zIndex: 1,
 });
 
+const fadein = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 0.4;
+}
+`;
+
 export const MediaContainer = css({
   position: 'fixed',
   top: '0',
@@ -209,7 +218,9 @@ export const MediaContainer = css({
     objectFit: 'contain',
 
     '&.is-active': {
-      opacity: 1,
+      opacity: 0.4,
+      animation: `${fadein} 0.5s linear`,
+      animationIterationCount: 1,
     },
   },
 });
