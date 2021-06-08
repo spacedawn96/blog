@@ -15,55 +15,113 @@ export default function ArticleList({}: ArticleListProps) {
                 This was a dream project and an honor to represent Walt’s wonderful
                 creation: Mickey Mouse, an American icon. When I received the proposal
                 from the Walt Disney Company to paint 100 Mickey’s (in 2002), I packed up
+                my paints and brushes and flew to a little island in the Caribbean.
+                Inspired by nature’s colors — and the occasional plunge in the river — I
+                returned two weeks later with the first 21 mice. That was the easy part.
+                The next 79 were more challenging and took 16 months to finish. The
+                challenge was to make each one a different pose, style, or medium, as well
+                as paying homage to the history of Mickey Mouse.
               </p>
             </div>
             <div>
-              <h2>1.hello</h2>
+              <h2>His unique</h2>
             </div>
             <div css={ArticleWrapper}>
               <div css={ArticleLeft}>
                 <div css={ArticleItem}>
-                  <small>item</small>
+                  <small>While defining me</small>
                   <div>2019/2/3</div>
                 </div>
-                <small>item2</small>
-                <small>item2</small>
-                <small>item2</small>
+                <div css={ArticleItem}>
+                  <small>Imagineering. As a concept designer</small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>
+                    he has become a best-selling artist in Disney’s theme parks
+                  </small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>
               </div>
               <div css={ArticleRight}>
-                <small>item2</small>
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>
               </div>
             </div>
             <div>
-              <h2>2.hello</h2>
+              <h2>In addition</h2>
             </div>
             <div css={ArticleWrapper}>
               <div css={ArticleLeft}>
-                <small>item</small>
-                <small>item2</small>
-                <small>item2</small>
-                <small>item2</small>
-                <small>item2</small>
+                <div css={ArticleItem}>
+                  <small>While defining me</small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>Imagineering. As a concept designer</small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>
+                    he has become a best-selling artist in Disney’s theme parks
+                  </small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>
               </div>
               <div css={ArticleRight}>
-                <small>item2</small>
-                <small>item2</small>
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>{' '}
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>
               </div>
             </div>
             <div>
-              <h2>2.hello</h2>
+              <h2>In 2019</h2>
             </div>
             <div css={ArticleWrapper}>
               <div css={ArticleLeft}>
-                <small>item</small>
-                <small>item2</small>
-                <small>item2</small>
-                <small>item2</small>
-                <small>item2</small>
+                <div css={ArticleItem}>
+                  <small>While defining me</small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>Imagineering. As a concept designer</small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>
+                    he has become a best-selling artist in Disney’s theme parks
+                  </small>
+                  <div>2019/2/3</div>
+                </div>
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>
               </div>
               <div css={ArticleRight}>
-                <small>item2</small>
-                <small>item2</small>
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>{' '}
+                <div css={ArticleItem}>
+                  <small>Upon graduating with honors from the Art Center College</small>
+                  <div>2019/2/3</div>
+                </div>
               </div>
             </div>
           </article>
@@ -75,7 +133,6 @@ export default function ArticleList({}: ArticleListProps) {
 
 const ArticleContainer = css({
   display: 'flex',
-
   animationDelay: '.2s',
   animationDuration: '.8s',
   animationName: 'bottomToTop',
@@ -90,28 +147,28 @@ const ArticleContainer = css({
     marginTop: '10%',
     fontFamily: '"Nunito Sans", sans-serif',
     lineHeight: '1.5rem',
-    marginBlockEnd: '1em',
-    marginInlineStart: '0px',
-    marginInlineEnd: '0px',
   },
   h2: {
     fontSize: '5.25rem',
+    // color: '#ff4400',
+    padding: '3rem 0',
   },
 
   small: {
-    fontSize: '3rem',
+    fontSize: '2rem',
   },
 });
 
 const ArticleWrapper = css({
   display: 'flex',
-
   color: '#292929',
+
+  small: {},
 });
 
 const ArticleLeft = css({
   width: '50%',
-
+  // marginLeft: '10%',
   display: 'flex',
   flexDirection: 'column',
 });
@@ -120,11 +177,19 @@ const ArticleRight = css({
   display: 'flex',
   flexDirection: 'column',
   width: '50%',
-  // marginLeft: '10%',
+  marginLeft: '20%',
 });
 
 const ArticleItem = css({
   display: 'flex',
-  alignItems: 'center',
   justifyContent: 'space-between',
+  padding: '3rem 0',
+  alignItems: 'center',
+  small: {
+    width: '70%',
+    height: 'auto',
+    wordWrap: 'break-word',
+  },
+
+  div: {},
 });

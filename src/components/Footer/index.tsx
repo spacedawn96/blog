@@ -111,10 +111,11 @@ const FooterAsideContainer = css({
 });
 
 const FooterBottomContainer = css({
-  display: 'flex',
+  display: 'none',
   fontSize: '0.75rem',
   '@media (max-width: 1000px)': {
     fontFamily: '"Aeonik-Light","Helvetica","Arial",sans-serif',
+    display: 'flex',
   },
 });
 
