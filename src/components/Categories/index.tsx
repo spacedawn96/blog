@@ -2,6 +2,8 @@ import { css, keyframes } from '@emotion/react';
 import { SelectContext } from '../../lib/context';
 import { useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
 import styles from './index.module.css';
+import Link from 'next/link';
+import Fiber from '../Fiber';
 
 export type CategoriesProps = {};
 
@@ -37,12 +39,47 @@ const initialState = {
       name: 'http',
       url: '/http.png',
     },
+    {
+      id: 5,
+      name: 'react',
+      url: '/database.png',
+    },
+    {
+      id: 6,
+      name: 'react',
+      url: '/database.png',
+    },
+    {
+      id: 7,
+      name: 'react',
+      url: '/database.png',
+    },
+    {
+      id: 8,
+      name: 'react',
+      url: '/database.png',
+    },
+    {
+      id: 9,
+      name: 'react',
+      url: '/database.png',
+    },
   ],
   activeFilter: [],
 };
 
+const fadeinHover = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+`;
+
 const TitleBlock = css({
   '&:hover': {
+    transition: 'color 0.5s ease',
     color: '#ff4400',
   },
 });
@@ -70,15 +107,19 @@ const useMousePosition = () => {
 
 function Title(props: TitleProps) {
   return (
-    <div
-      className="project-list"
-      css={TitleBlock}
-      onMouseEnter={() => props.setActiveIndex(props.index)}
-      onMouseLeave={() => props.setActiveIndex(-1)}>
-      <div css={ProjectTitle} className="project-title">
-        <span> {props.title.name}</span>
-      </div>
-    </div>
+    <>
+      <Link href={{ pathname: `/blogList` }}>
+        <div
+          className="project-list"
+          css={TitleBlock}
+          onMouseEnter={() => props.setActiveIndex(props.index)}
+          onMouseLeave={() => props.setActiveIndex(-1)}>
+          <div css={ProjectTitle} className="project-title">
+            <span> {props.title.name}</span>
+          </div>
+        </div>
+      </Link>
+    </>
   );
 }
 
@@ -162,6 +203,7 @@ export default function Categories({}: CategoriesProps) {
           );
         })}
       </div> */}
+      {/* <Fiber /> */}
     </main>
   );
 }
@@ -178,11 +220,14 @@ export const CategoriesStyle = css({
   animationName: 'bottomToTop',
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
-  marginBottom: '8px',
+  marginBottom: '5rem',
   fontWeight: 600,
   // img: {
   //   display: 'none',
   // },
+  '@media (max-width: 1000px)': {
+    fontSize: '32px',
+  },
 });
 
 export const ListWapper = css({});

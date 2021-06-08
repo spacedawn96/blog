@@ -12,7 +12,7 @@ export default function Icon() {
         </Link>
       </li>
       <li css={IconBlock}>
-        <Link href="/">
+        <Link href="mailto:spacedawn96@gmail.com">
           <SiGmail size={20} />
         </Link>
       </li>
@@ -23,5 +23,9 @@ export default function Icon() {
 const IconBlock = css({
   '&:hover': {
     color: '#ff4400',
+  },
+
+  '@media (max-width: 1000px)': {
+    display: 'none',
   },
 });

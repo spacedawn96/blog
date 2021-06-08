@@ -11,7 +11,7 @@ export default function AboutPage({}: AboutPageProps) {
   return (
     <div css={AboutPageStyle}>
       <Header />
-      <ArticleList />
+      <About />
       <Footer />
     </div>
   );

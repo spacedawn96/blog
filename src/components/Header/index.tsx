@@ -5,6 +5,7 @@ import Icon from '../Icon';
 import { useRouter } from 'next/router';
 import { useTrail, a } from '@react-spring/web';
 import { Trail } from '../Animation/Trail';
+import { CgDarkMode } from 'react-icons/cg';
 
 export type HeadereProps = {};
 
@@ -74,7 +75,7 @@ export default function Header(props: HeadereProps) {
             <li>
               <Link href="/">
                 <a>
-                  <Image src="/signature.png" alt="signature" width={320} height={113} />
+                  <img src="/signature.png" alt="signature" css={HedaerImg} />
                 </a>
               </Link>
             </li>
@@ -97,14 +98,18 @@ const Nav = css({
   width: '100%',
   marginBottom: '6rem',
   zIndex: 22,
+  '@media (max-width: 1000px)': {
+    marginBottom: '0rem',
+  },
 });
 
-const TextHover = css({
-  // '&:hover': {
-  //   color: '#ff4400',
-  //   borderBottom: '4px solid #ff4400',
-  //   paddingBottom: '0.3rem',
-  // },
+const HedaerImg = css({
+  width: '20rem',
+  height: '7rem',
+  '@media (max-width: 1000px)': {
+    width: '145px',
+    height: '32px',
+  },
 });
 
 const NavList = css({
@@ -123,4 +128,14 @@ const NavList = css({
   fontFamily: '"Rubik", "sans-serif"',
   transition: 'all .3s ease',
   fontSize: '1.12rem',
+
+  '@media (max-width: 1000px)': {
+    display: 'flex',
+    li: {
+      ':nth-of-type(1)': { flexGrow: 0.1 },
+      ':nth-of-type(2)': { flexGrow: 2 },
+      ':nth-of-type(3)': { flexGrow: 0 },
+    },
+    fontSize: '14px',
+  },
 });

@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
 import Icon from '../Icon';
 import Image from 'next/image';
+import { FaGithub } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
+import Link from 'next/link';
 
 export type FooterProps = {};
 
@@ -10,13 +13,23 @@ export default function Footer({}: FooterProps) {
       <footer css={FooterStyle}>
         <div css={FooterLeft}>
           <div css={FooterContainer}>
-            <div css={FooterIcon}>
-              <Icon />
-            </div>
+            <ul css={FooterIcon}>
+              <li css={IconBlock}>
+                <Link href="https://github.com/spacedawn96">
+                  <FaGithub size={20} />
+                </Link>
+              </li>
+              <li css={IconBlock}>
+                <Link href="mailto:spacedawn96@gmail.com">
+                  <SiGmail size={20} />
+                </Link>
+              </li>
+            </ul>
             <div css={FooterAsideContainer}> Web design by Spacedawn96</div>
             <ul>
               <li css={FooterEamilFont}>spacedawn96@gmail.com</li>
               <li css={FooterCopyRight}> © 2021. All Posts copyright of Spaceadwn96 </li>
+              <div css={FooterBottomContainer}> Web design by Spacedawn96</div>
             </ul>
           </div>
         </div>
@@ -55,6 +68,9 @@ const FooterContainer = css({
 
 const FooterEamilFont = css({
   fontSize: '1.5rem',
+  '@media (max-width: 1000px)': {
+    fontSize: '20px',
+  },
 });
 
 const FooterCopyRight = css({
@@ -77,6 +93,9 @@ const FooterWithImg = css({
   display: 'flex',
   width: '60%',
   justifyContent: 'flex-end',
+  '@media (max-width: 1000px)': {
+    display: 'none',
+  },
 });
 
 const FooterAsideContainer = css({
@@ -86,4 +105,21 @@ const FooterAsideContainer = css({
   fontSize: '0.75rem',
   alignItems: 'flex-end',
   right: '0',
+  '@media (max-width: 1000px)': {
+    display: 'none',
+  },
+});
+
+const FooterBottomContainer = css({
+  display: 'flex',
+  fontSize: '0.75rem',
+  '@media (max-width: 1000px)': {
+    fontFamily: '"Aeonik-Light","Helvetica","Arial",sans-serif',
+  },
+});
+
+const IconBlock = css({
+  '&:hover': {
+    color: '#ff4400',
+  },
 });
