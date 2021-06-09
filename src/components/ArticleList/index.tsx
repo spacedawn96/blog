@@ -10,8 +10,8 @@ export default function ArticleList({}: ArticleListProps) {
         <section>
           <article>
             <div css={ArticleWrapper}>
-              <h1 css={ArticleLeft}>Javascript</h1>
-              <p css={ArticleRight}>
+              <h1 css={ArticleTitle}>Javascript</h1>
+              <p css={ArticleMiddle}>
                 This was a dream project and an honor to represent Walt’s wonderful
                 creation: Mickey Mouse, an American icon. When I received the proposal
                 from the Walt Disney Company to paint 100 Mickey’s (in 2002), I packed up
@@ -141,6 +141,9 @@ const ArticleContainer = css({
   fontFamily: '"Rubik", "sans-serif"',
   h1: {
     fontSize: '6.25rem',
+    '@media (max-width: 1000px)': {
+      fontSize: '3.5rem',
+    },
   },
   p: {
     fontSize: '1rem',
@@ -156,13 +159,19 @@ const ArticleContainer = css({
 
   small: {
     fontSize: '2rem',
+    '@media (max-width: 1000px)': {
+      fontSize: '1.5rem',
+    },
   },
 });
 
 const ArticleWrapper = css({
   display: 'flex',
   color: '#292929',
-
+  '@media (max-width: 1000px)': {
+    display: 'flex',
+    flexDirection: 'column',
+  },
   small: {},
 });
 
@@ -171,6 +180,18 @@ const ArticleLeft = css({
   // marginLeft: '10%',
   display: 'flex',
   flexDirection: 'column',
+  '@media (max-width: 1000px)': {
+    width: '100%',
+  },
+});
+const ArticleTitle = css({
+  width: '50%',
+  // marginLeft: '10%',
+  display: 'flex',
+  flexDirection: 'column',
+  '@media (max-width: 1000px)': {
+    width: '0%',
+  },
 });
 
 const ArticleRight = css({
@@ -178,6 +199,21 @@ const ArticleRight = css({
   flexDirection: 'column',
   width: '50%',
   marginLeft: '20%',
+  '@media (max-width: 1000px)': {
+    width: '100%',
+    marginLeft: '0%',
+  },
+});
+
+const ArticleMiddle = css({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '50%',
+  marginLeft: '20%',
+  '@media (max-width: 1000px)': {
+    marginLeft: '0%',
+    width: '100%',
+  },
 });
 
 const ArticleItem = css({
@@ -185,6 +221,7 @@ const ArticleItem = css({
   justifyContent: 'space-between',
   padding: '3rem 0',
   alignItems: 'center',
+
   small: {
     width: '70%',
     height: 'auto',
