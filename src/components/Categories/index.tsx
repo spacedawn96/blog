@@ -21,47 +21,47 @@ const initialState = {
   filterList: [
     {
       id: 1,
-      name: 'javascript',
+      name: 'Javascript',
       url: '/javascript.png',
     },
     {
       id: 2,
-      name: 'typescript',
+      name: 'Typescript',
       url: '/typescript.png',
     },
     {
       id: 3,
-      name: 'react',
+      name: 'React',
       url: '/database.png',
     },
     {
       id: 4,
-      name: 'http',
+      name: 'Http',
       url: '/http.png',
     },
     {
       id: 5,
-      name: 'react',
+      name: 'Database',
       url: '/database.png',
     },
     {
       id: 6,
-      name: 'react',
+      name: 'Node js',
       url: '/database.png',
     },
     {
       id: 7,
-      name: 'react',
+      name: 'Optimization',
       url: '/database.png',
     },
     {
       id: 8,
-      name: 'react',
+      name: 'Network',
       url: '/database.png',
     },
     {
       id: 9,
-      name: 'react',
+      name: 'SQL',
       url: '/database.png',
     },
   ],
@@ -205,7 +205,9 @@ export default function Categories({}: CategoriesProps) {
           );
         })}
       </div> */}
-        {/* <Fiber /> */}
+        <div css={FiberBlock}>
+          <Fiber />
+        </div>
       </main>
     </>
   );
@@ -226,6 +228,7 @@ export const CategoriesStyle = css({
   animationTimingFunction: 'ease',
   marginBottom: '5rem',
   fontWeight: 600,
+
   // img: {
   //   display: 'none',
   // },
@@ -234,7 +237,9 @@ export const CategoriesStyle = css({
   },
 });
 
-export const ListWapper = css({});
+export const FiberBlock = css({
+  marginLeft: '10%',
+});
 
 export const ProjectList = css({
   // mixBlendMode: 'difference',

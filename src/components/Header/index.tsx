@@ -52,9 +52,16 @@ export default function Header(props: HeadereProps) {
               <Link href="/">
                 <a
                   style={{
-                    color: router.asPath == '/' ? '#ff4400' : '#292929',
-                    borderBottom: router.asPath == '/' ? '4px solid #ff4400' : '',
-                    paddingBottom: router.asPath == '/' ? '0.3rem' : '',
+                    color:
+                      router.asPath == '/' || '/blogList' || '/blog'
+                        ? '#ff4400'
+                        : '#292929',
+                    borderBottom:
+                      router.asPath == '/' || '/blogList' || '/blog'
+                        ? '4px solid #ff4400'
+                        : '',
+                    paddingBottom:
+                      router.asPath == '/' || '/blogList' || '/blog' ? '0.3rem' : '',
                   }}>
                   POST
                 </a>

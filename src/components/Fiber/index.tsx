@@ -85,7 +85,7 @@ function Cloud({ count = 4, radius = 20 }: any) {
 
 export default function Fiber() {
   return (
-    <div style={{ width: '500px', height: '600px' }}>
+    <div css={FiberContainer}>
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
         <fog attach="fog" args={['#202025', 0, 80]} />
         <Cloud count={8} radius={20} />
@@ -94,3 +94,11 @@ export default function Fiber() {
     </div>
   );
 }
+
+const FiberContainer = css({
+  width: '32rem',
+  height: '40rem',
+  '@media (max-width: 1400px)': {
+    display: 'none',
+  },
+});
