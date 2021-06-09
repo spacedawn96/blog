@@ -175,18 +175,20 @@ export default function Categories({}: CategoriesProps) {
   const { x, y } = useMousePosition();
 
   return (
-    <main css={CategoriesStyle}>
-      <div css={ProjectList}>
-        {initialState?.filterList.map((title, index) => (
-          <Title
-            title={title}
-            setActiveIndex={setActiveIndex}
-            index={index}
-            key={title.id}
-          />
-        ))}
-      </div>
-      {/* <div css={MediaContainer}>
+    <>
+      <main css={CategoriesStyle}>
+        <div css={ProjectList}>
+          {initialState?.filterList.map((title, index) => (
+            <Title
+              title={title}
+              setActiveIndex={setActiveIndex}
+              index={index}
+              key={title.id}
+            />
+          ))}
+        </div>
+
+        {/* <div css={MediaContainer}>
         {initialState?.filterList.map((title, index) => {
           const isActive = index == activeIndex;
           const xPos = isActive ? x : 0;
@@ -203,10 +205,12 @@ export default function Categories({}: CategoriesProps) {
           );
         })}
       </div> */}
-      {/* <Fiber /> */}
-    </main>
+        {/* <Fiber /> */}
+      </main>
+    </>
   );
 }
+
 export const CategoriesStyle = css({
   display: 'flex',
   // flexDirection: 'column',

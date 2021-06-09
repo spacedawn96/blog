@@ -43,22 +43,32 @@ export default function Blog(props: any) {
   );
 }
 
-const PostBlock = css({
-  display: 'flex',
-  justifyContent: 'center',
-  // margin: '0 6% 0 6%',
-  // margin: '0 6% 0 10%',
-  // color: '#292929',
-  // fontnFamily: "'Noto Sans KR', sans-serif",
-  fontSize: '1.125rem',
+const PostBlock = css`
+  display: flex;
+  justify-content: center';
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.125rem;
+
+
+`;
+
+const PostArticle = css({
+  // margin: '0 auto',
+  // border: '1px solid red',
+  // display: 'flex',
+  // justifyContent: 'center',
+  // flexDirection: 'column',
+
+  maxWidth: '900px',
+  margin: '0 auto',
   p: {
     display: 'block',
-    fontSize: '1.125rem',
     marginBlockStart: '1em',
-    marginBlockEnd: '1em',
+    marginBlockEnd: ' 1em',
     marginInlineStart: '0px',
     marginInlineEnd: '0px',
   },
+
   h1: {
     marginBottom: '0.95rem',
   },
@@ -71,16 +81,6 @@ const PostBlock = css({
   li: {
     marginBottom: '0.95rem',
   },
-});
-
-const PostArticle = css({
-  // margin: '0 auto',
-  // border: '1px solid red',
-  // display: 'flex',
-  // justifyContent: 'center',
-  // flexDirection: 'column',
-  maxWidth: '900px',
-  margin: '0 auto',
 });
 
 export async function getStaticProps({ params }: Params) {

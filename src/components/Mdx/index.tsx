@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { useState } from 'react';
+import { css } from '@emotion/react';
 
 export default function Mdx({ children, meta: pageMeta }: any) {
   const [theme, setTheme] = useState('okaidia');
@@ -98,9 +99,18 @@ export default function Mdx({ children, meta: pageMeta }: any) {
       <div id="skip">
         <article
           className="prose lg:prose-xl px-8 m-auto my-4 sm:my-16"
+          css={ForFont}
           dangerouslySetInnerHTML={{ __html: children }}
         />
       </div>
     </>
   );
 }
+const ForFont = css({
+  // margin: '0 auto',
+  // border: '1px solid red',
+  // display: 'flex',
+  // justifyContent: 'center',
+  // flexDirection: 'column',
+  fontnFamily: "'Nanum Gothic', sans-serif",
+});
