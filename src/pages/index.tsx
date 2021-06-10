@@ -11,14 +11,6 @@ export type HomeProps = {};
 export default function Home({}: HomeProps) {
   return (
     <>
-      <Head>
-        <link href="themes/prism-ghcolors.css" rel="stylesheet" />
-        <link href="/styles/Prism.css" rel="stylesheet" />
-        <script src="/js/Prism.js"></script>
-        <script src="prism.js"></script>
-        <link rel="stylesheet" href="assets/style.css" />
-        <link rel="stylesheet" href="themes/prism.css" data-noprefix />
-      </Head>
       <Header />
       <Categories />
       <Footer />

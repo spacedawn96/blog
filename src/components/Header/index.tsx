@@ -52,16 +52,9 @@ export default function Header(props: HeadereProps) {
               <Link href="/">
                 <a
                   style={{
-                    color:
-                      router.asPath == '/' || '/blogList' || '/blog'
-                        ? '#ff4400'
-                        : '#292929',
-                    borderBottom:
-                      router.asPath == '/' || '/blogList' || '/blog'
-                        ? '4px solid #ff4400'
-                        : '',
-                    paddingBottom:
-                      router.asPath == '/' || '/blogList' || '/blog' ? '0.3rem' : '',
+                    color: router.asPath == '/about' ? '#292929' : '#ff4400',
+                    borderBottom: router.asPath == '/about' ? '0' : '4px solid #ff4400',
+                    paddingBottom: router.asPath == '/about' ? '0rem' : '0.3rem',
                   }}>
                   POST
                 </a>
@@ -72,8 +65,8 @@ export default function Header(props: HeadereProps) {
                 <a
                   style={{
                     color: router.asPath == '/about' ? '#ff4400' : '#292929',
-                    borderBottom: router.asPath == '/about' ? '4px solid #ff4400' : '',
-                    paddingBottom: router.asPath == '/about' ? '0.3rem' : '',
+                    borderBottom: router.asPath == '/about' ? '4px solid #ff4400' : '0',
+                    paddingBottom: router.asPath == '/about' ? '0.3rem' : '0',
                   }}>
                   ABOUT
                 </a>

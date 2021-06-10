@@ -91,24 +91,26 @@ const ProjectTitle = css({
   cursor: 'pointer',
 });
 
-const useMousePosition = () => {
-  const [mousePosition, setMousePostion] = useState({ x: 0, y: 0 });
+// const useMousePosition = () => {
+//   const [mousePosition, setMousePostion] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const updateMousePosition = (e: any) => {
-      setMousePostion({ x: e.clientX, y: e.clientY });
-    };
+//   useEffect(() => {
+//     const updateMousePosition = (e: any) => {
+//       setMousePostion({ x: e.clientX, y: e.clientY });
+//     };
 
-    window.addEventListener('mousemove', updateMousePosition);
-  }, []);
+//     window.addEventListener('mousemove', updateMousePosition);
+//   }, []);
 
-  return mousePosition;
-};
+//   return mousePosition;
+// };
 
 function Title(props: TitleProps) {
+  const TrimTitle = props.title.name.replace(/ /g, '');
+
   return (
     <>
-      <Link href={{ pathname: `/blogList` }}>
+      <Link href={{ pathname: `/${TrimTitle}` }}>
         <div
           className="project-list"
           css={TitleBlock}
@@ -131,49 +133,48 @@ const getDimensionObject = (node: { getBoundingClientRect: () => any } | null) =
     height: rect.height,
   };
 };
-const useSize = () => {
-  const [dimensions, setDimensions] = useState({});
-  const [node, setNode] = useState(null);
+// const useSize = () => {
+//   const [dimensions, setDimensions] = useState({});
+//   const [node, setNode] = useState(null);
 
-  const ref = useCallback(node => {
-    setNode(node);
-  }, []);
+//   const ref = useCallback(node => {
+//     setNode(node);
+//   }, []);
 
-  useEffect(() => {
-    if (node) {
-      const measure = () => setDimensions(getDimensionObject(node));
+//   useEffect(() => {
+//     if (node) {
+//       const measure = () => setDimensions(getDimensionObject(node));
 
-      measure();
-    }
-  }, [node]);
+//       measure();
+//     }
+//   }, [node]);
 
-  return [ref, dimensions];
-};
+//   return [ref, dimensions];
+// };
 
-function Media(props: TitleProps) {
-  const [ref, { width, height }]: any = useSize();
-  return (
-    <div css={MedeiaBlock}>
-      <img
-        ref={ref}
-        src={props.title.url}
-        alt="js"
-        width="100"
-        height="100"
-        style={{
-          transform: `translate(${props.x - width / 2}px , ${props.y - height / 2}px )`,
-        }}
-        className={props.active && 'is-active' ? 'is-active' : ''}
-      />
-    </div>
-  );
-}
+// function Media(props: TitleProps) {
+//   const [ref, { width, height }]: any = useSize();
+//   return (
+//     <div css={MedeiaBlock}>
+//       <img
+//         ref={ref}
+//         src={props.title.url}
+//         alt="js"
+//         width="100"
+//         height="100"
+//         style={{
+//           transform: `translate(${props.x - width / 2}px , ${props.y - height / 2}px )`,
+//         }}
+//         className={props.active && 'is-active' ? 'is-active' : ''}
+//       />
+//     </div>
+//   );
+// }
 
 export default function Categories({}: CategoriesProps) {
   const [activeIndex, setActiveIndex] = useState(-1);
 
-  const { x, y } = useMousePosition();
-
+  console.log('test');
   return (
     <>
       <main css={CategoriesStyle}>
@@ -205,9 +206,9 @@ export default function Categories({}: CategoriesProps) {
           );
         })}
       </div> */}
-        <div css={FiberBlock}>
+        {/* <div css={FiberBlock}>
           <Fiber />
-        </div>
+        </div> */}
       </main>
     </>
   );
