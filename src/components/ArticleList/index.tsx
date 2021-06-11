@@ -17,7 +17,7 @@ export default function ArticleList({}: ArticleListProps) {
   const ReplacePath = router.asPath.replace('/', '');
   const FilterArticle = filterList.filter((i: any) => i.name == ReplacePath);
 
-  const FilterArticlePostTitle = FilterArticle[0].post.map((el: any) =>
+  const FilterArticlePostTitle = FilterArticle[0]?.post?.map((el: any) =>
     el.subtitle.map((ele: any) => ele.postTitle),
   );
 
