@@ -1,6 +1,7 @@
 import { SelectContext } from '@/lib/context';
 import { css } from '@emotion/react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 
@@ -16,9 +17,11 @@ export default function ArticleList({}: ArticleListProps) {
   const ReplacePath = router.asPath.replace('/', '');
   const FilterArticle = filterList.filter((i: any) => i.name == ReplacePath);
 
-  console.log(
-    FilterArticle[0]?.post.javascript.map((ele: any) => ele.subtitle[0].postTitle),
+  const FilterArticlePostTitle = FilterArticle[0].post.map((el: any) =>
+    el.subtitle.map((ele: any) => ele.postTitle),
   );
+
+  console.log(FilterArticlePostTitle);
 
   return (
     <main css={ArticleContainer}>
@@ -29,15 +32,30 @@ export default function ArticleList({}: ArticleListProps) {
             <p css={ArticleMiddle}>{FilterArticle[0]?.descriable}</p>
           </div>
 
-          {FilterArticle[0]?.post.javascript.map((ele: any) => (
+          {FilterArticle[0]?.post?.map((ele: any) => (
             <>
               <div>
                 <h2>{ele.title}</h2>
                 <div css={ArticleWrapper}>
                   <div css={ArticleLeft}>
                     <div css={ArticleItem}>
-                      <small> {ele.subtitle?.postTitle} </small>
-                      <div>2019/2/3</div>
+                      <small>
+                        {ele.subtitle.map((ele: any) => (
+                          <div>
+                            <Link href={`/blog/${ele.linkTo}`}>
+                              <a>{ele.postTitle}</a>
+                            </Link>
+                          </div>
+                        ))}
+                      </small>
+
+                      <div>
+                        {ele.subtitle.map((ele: any) => (
+                          <>
+                            {ele.date} <br />
+                          </>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   <div css={ArticleRight}>

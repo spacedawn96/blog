@@ -30,46 +30,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
-      post: {
-        javascript: [
-          {
-            id: 1,
-            title: 'javascript',
-            subtitle: [
-              {
-                postTitle: 'first post',
-                date: '2021/09/21',
-              },
-              {
-                postTitle: 'first post',
-                date: '2021/09/21',
-              },
-              {
-                postTitle: 'first post',
-                date: '2021/09/21',
-              },
-            ],
-          },
-          {
-            id: 2,
-            title: 'typescript',
-            subtitle: [
-              {
-                postTitle: 'first post',
-                date: '2021/09/21',
-              },
-              {
-                postTitle: 'first post',
-                date: '2021/09/21',
-              },
-              {
-                postTitle: 'first post',
-                date: '2021/09/21',
-              },
-            ],
-          },
-        ],
-      },
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post22',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post33',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 2,
@@ -85,7 +86,49 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
+
     {
       id: 3,
       name: 'React',
@@ -100,6 +143,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 4,
@@ -115,6 +199,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 5,
@@ -130,6 +255,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 6,
@@ -145,6 +311,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 7,
@@ -160,6 +367,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 8,
@@ -175,6 +423,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 9,
@@ -190,6 +479,47 @@ const initialState: InitialState = {
       more challenging and took 16 months to finish. The challenge was to make
       each one a different pose, style, or medium, as well as paying homage to the
       history of Mickey Mouse.`,
+      post: [
+        {
+          id: 1,
+          title: 'javascript',
+          subtitle: [
+            {
+              postTitle: 'first post',
+              date: '2021/09/21',
+              linkTo: '1.javascript',
+            },
+            {
+              postTitle: 'first post22',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+            {
+              postTitle: 'first post33',
+              date: '2021/09/21',
+              linkTo: '2.typescript',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'sub2',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
     },
   ],
   activeFilter: [],
