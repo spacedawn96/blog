@@ -8,64 +8,16 @@ import Fiber from '../Fiber';
 export type CategoriesProps = {};
 
 export type TitleProps = {
-  title: any;
+  list: any;
   setActiveIndex?: any;
-  index: any;
   activeIndex?: any;
   active?: any;
   x?: any;
   y?: any;
-};
-
-const initialState = {
-  filterList: [
-    {
-      id: 1,
-      name: 'Javascript',
-      url: '/javascript.png',
-    },
-    {
-      id: 2,
-      name: 'Typescript',
-      url: '/typescript.png',
-    },
-    {
-      id: 3,
-      name: 'React',
-      url: '/database.png',
-    },
-    {
-      id: 4,
-      name: 'Http',
-      url: '/http.png',
-    },
-    {
-      id: 5,
-      name: 'Database',
-      url: '/database.png',
-    },
-    {
-      id: 6,
-      name: 'Node js',
-      url: '/database.png',
-    },
-    {
-      id: 7,
-      name: 'Optimization',
-      url: '/database.png',
-    },
-    {
-      id: 8,
-      name: 'Network',
-      url: '/database.png',
-    },
-    {
-      id: 9,
-      name: 'SQL',
-      url: '/database.png',
-    },
-  ],
-  activeFilter: [],
+  dispatch: any;
+  filterList: any;
+  activeFilter: any;
+  currentState: any;
 };
 
 const fadeinHover = keyframes`
@@ -91,37 +43,33 @@ const ProjectTitle = css({
   cursor: 'pointer',
 });
 
-// const useMousePosition = () => {
-//   const [mousePosition, setMousePostion] = useState({ x: 0, y: 0 });
+const useMousePosition = () => {
+  const [mousePosition, setMousePostion] = useState({ x: 0, y: 0 });
 
-//   useEffect(() => {
-//     const updateMousePosition = (e: any) => {
-//       setMousePostion({ x: e.clientX, y: e.clientY });
-//     };
+  useEffect(() => {
+    const updateMousePosition = (e: any) => {
+      setMousePostion({ x: e.clientX, y: e.clientY });
+    };
 
-//     window.addEventListener('mousemove', updateMousePosition);
-//   }, []);
+    window.addEventListener('mousemove', updateMousePosition);
+  }, []);
 
-//   return mousePosition;
-// };
+  return mousePosition;
+};
 
+//onMouseEnter={() => props.setActiveIndex(props.index)}
+//onMouseLeave={() => props.setActiveIndex(-1)}
 function Title(props: TitleProps) {
-  const TrimTitle = props.title.name.replace(/ /g, '');
+  const TrimTitle = props.list.name.replace(/ /g, '');
 
   return (
-    <>
-      <Link href={{ pathname: `/${TrimTitle}` }}>
-        <div
-          className="project-list"
-          css={TitleBlock}
-          onMouseEnter={() => props.setActiveIndex(props.index)}
-          onMouseLeave={() => props.setActiveIndex(-1)}>
-          <div css={ProjectTitle} className="project-title">
-            <span> {props.title.name}</span>
-          </div>
+    <Link href={{ pathname: `${TrimTitle}` }}>
+      <div className="project-list" css={TitleBlock}>
+        <div css={ProjectTitle} className="project-title">
+          <span> {props.list.name}</span>
         </div>
-      </Link>
-    </>
+      </div>
+    </Link>
   );
 }
 
@@ -133,63 +81,69 @@ const getDimensionObject = (node: { getBoundingClientRect: () => any } | null) =
     height: rect.height,
   };
 };
-// const useSize = () => {
-//   const [dimensions, setDimensions] = useState({});
-//   const [node, setNode] = useState(null);
+const useSize = () => {
+  const [dimensions, setDimensions] = useState({});
+  const [node, setNode] = useState(null);
 
-//   const ref = useCallback(node => {
-//     setNode(node);
-//   }, []);
+  const ref = useCallback(node => {
+    setNode(node);
+  }, []);
 
-//   useEffect(() => {
-//     if (node) {
-//       const measure = () => setDimensions(getDimensionObject(node));
+  useEffect(() => {
+    if (node) {
+      const measure = () => setDimensions(getDimensionObject(node));
 
-//       measure();
-//     }
-//   }, [node]);
+      measure();
+    }
+  }, [node]);
 
-//   return [ref, dimensions];
-// };
+  return [ref, dimensions];
+};
 
-// function Media(props: TitleProps) {
-//   const [ref, { width, height }]: any = useSize();
-//   return (
-//     <div css={MedeiaBlock}>
-//       <img
-//         ref={ref}
-//         src={props.title.url}
-//         alt="js"
-//         width="100"
-//         height="100"
-//         style={{
-//           transform: `translate(${props.x - width / 2}px , ${props.y - height / 2}px )`,
-//         }}
-//         className={props.active && 'is-active' ? 'is-active' : ''}
-//       />
-//     </div>
-//   );
-// }
+function Media(props: TitleProps) {
+  const [ref, { width, height }]: any = useSize();
+  return (
+    <div css={MedeiaBlock}>
+      <img
+        ref={ref}
+        src={props.list.url}
+        alt="js"
+        width="100"
+        height="100"
+        style={{
+          transform: `translate(${props.x - width / 2}px , ${props.y - height / 2}px )`,
+        }}
+        className={props.active && 'is-active' ? 'is-active' : ''}
+      />
+    </div>
+  );
+}
 
 export default function Categories({}: CategoriesProps) {
+  let {
+    state: { filterList, activeFilter, currentState },
+    dispatch,
+  } = useContext(SelectContext) as any;
+
   const [activeIndex, setActiveIndex] = useState(-1);
 
-  console.log('test');
   return (
-    <>
-      <main css={CategoriesStyle}>
-        <div css={ProjectList}>
-          {initialState?.filterList.map((title, index) => (
-            <Title
-              title={title}
-              setActiveIndex={setActiveIndex}
-              index={index}
-              key={title.id}
-            />
-          ))}
-        </div>
+    <main css={CategoriesStyle}>
+      <div css={ProjectList}>
+        {filterList.map((list: any) => (
+          <Title
+            list={list}
+            setActiveIndex={setActiveIndex}
+            dispatch={dispatch}
+            key={list.id}
+            filterList={filterList}
+            activeFilter={activeFilter}
+            currentState={currentState}
+          />
+        ))}
+      </div>
 
-        {/* <div css={MediaContainer}>
+      {/* <div css={MediaContainer}>
         {initialState?.filterList.map((title, index) => {
           const isActive = index == activeIndex;
           const xPos = isActive ? x : 0;
@@ -206,11 +160,10 @@ export default function Categories({}: CategoriesProps) {
           );
         })}
       </div> */}
-        {/* <div css={FiberBlock}>
+      {/* <div css={FiberBlock}>
           <Fiber />
         </div> */}
-      </main>
-    </>
+    </main>
   );
 }
 
