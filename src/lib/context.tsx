@@ -58,7 +58,7 @@ const initialState: InitialState = {
             {
               postTitle: 'R first post33',
               date: '2021/09/21',
-              linkTo: '2.typescript',
+              linkTo: '4.http',
             },
           ],
         },

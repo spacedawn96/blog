@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
 import Footer from '../Footer';
 import Header from '../Header';
+import prism from 'prismjs';
+import 'prismjs/components/prism-jsx.min';
+import 'prismjs/plugins/unescaped-markup/prism-unescaped-markup.min.js';
 
 export type AppLayoutProps = {
   children: any;

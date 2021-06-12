@@ -35,7 +35,7 @@ export default function Blog(props: any) {
           <h1 css={PostHeader}>{props.posts.title}</h1>
           <h3>{reformatDate(props.posts.date)}</h3>
           {/* <div dangerouslySetInnerHTML={{ __html: props.posts.content }} />  */}
-          <Mdx meta={props.meta}>{props.posts.content}</Mdx>;
+          <article dangerouslySetInnerHTML={{ __html: props.posts.content }} />
           <h2>Written By: {props.posts.author.name}</h2>
         </article>
       </section>

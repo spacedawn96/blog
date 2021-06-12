@@ -30,6 +30,7 @@
     "@react-three/drei": "5.2.0",
     "@react-three/fiber": "6.2.1",
     "@types/js-yaml": "4.0.1",
+    "@types/prismjs": "1.16.5",
     "@types/random-words": "1.1.1",
     "@types/styled-components": "5.1.10",
     "@types/three": "0.128.0",
