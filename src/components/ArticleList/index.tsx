@@ -21,8 +21,6 @@ export default function ArticleList({}: ArticleListProps) {
     el.subtitle.map((ele: any) => ele.postTitle),
   );
 
-  console.log(FilterArticlePostTitle);
-
   return (
     <main css={ArticleContainer}>
       <section>
@@ -38,33 +36,32 @@ export default function ArticleList({}: ArticleListProps) {
                 <h2>{ele.title}</h2>
                 <div css={ArticleWrapper}>
                   <div css={ArticleLeft}>
-                    <div css={ArticleItem}>
-                      <small>
-                        {ele.subtitle.map((ele: any) => (
-                          <div>
-                            <Link href={`/blog/${ele.linkTo}`}>
-                              <a>{ele.postTitle}</a>
+                    {ele.subtitle
+                      .filter((ele: any) => ele.postTitle.charAt(0) == 'L')
+                      .map((i: any) => (
+                        <>
+                          <div css={ArticleItem}>
+                            <Link href={`/blog/${i.linkTo}`}>
+                              <small>{i.postTitle.replace('L ', '')}</small>
                             </Link>
+                            <div>{i.date}</div>
                           </div>
-                        ))}
-                      </small>
-
-                      <div>
-                        {ele.subtitle.map((ele: any) => (
-                          <>
-                            {ele.date} <br />
-                          </>
-                        ))}
-                      </div>
-                    </div>
+                        </>
+                      ))}
                   </div>
                   <div css={ArticleRight}>
-                    <div css={ArticleItem}>
-                      <small>
-                        Upon graduating with honors from the Art Center College
-                      </small>
-                      <div>2019/2/3</div>
-                    </div>
+                    {ele.subtitle
+                      .filter((ele: any) => ele.postTitle.charAt(0) == 'R')
+                      .map((i: any) => (
+                        <>
+                          <div css={ArticleItem}>
+                            <Link href={`/blog/${i.linkTo}`}>
+                              <small>{i.postTitle.replace('R ', '')}</small>
+                            </Link>
+                            <div>{i.date}</div>
+                          </div>
+                        </>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -164,7 +161,7 @@ const ArticleMiddle = css({
 const ArticleItem = css({
   display: 'flex',
   justifyContent: 'space-between',
-  padding: '3rem 0',
+  padding: '6rem 0',
   alignItems: 'center',
 
   small: {

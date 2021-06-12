@@ -84,15 +84,6 @@ export default function Mdx({ children, meta: pageMeta }: any) {
                 </select>
               </div>
             </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/leerob/nextjs-prism-markdown"
-                className="no-underline font-semibold text-gray-700">
-                Source
-              </a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -112,5 +103,4 @@ const ForFont = css({
   // display: 'flex',
   // justifyContent: 'center',
   // flexDirection: 'column',
-  fontnFamily: "'Nanum Gothic', sans-serif",
 });
