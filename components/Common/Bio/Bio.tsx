@@ -1,4 +1,4 @@
-import { getSiteMetaData } from '@/../utils/helpers';
+import { getSiteMetaData } from '../../../utils/helpers';
 import clsx from 'clsx';
 
 import { Image } from '..';

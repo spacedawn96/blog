@@ -1,4 +1,4 @@
-import { getSiteMetaData } from '@/../utils/helpers';
+import { getSiteMetaData } from '../../../utils/helpers';
 import Head from 'next/head';
 
 export function SEO({ title, description = '' }) {
