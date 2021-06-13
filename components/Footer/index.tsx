@@ -52,6 +52,7 @@ const FooterStyle = css({
   fontFamily: '"Rubik", "sans-serif"',
   color: '#292929',
   right: 0,
+  margin: '0 6% 0 10% ',
 });
 
 const FooterIcon = css({

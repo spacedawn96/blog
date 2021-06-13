@@ -92,6 +92,11 @@ const HeaderBlock = css({
   marginTop: '4rem',
   alignItems: 'center',
   transition: 'all .3s ease',
+  margin: ' 0 6% 0 10%',
+
+  '@media (max-width: 1000px)': {
+    margin: ' 0 6% 0 6%',
+  },
 });
 
 const Nav = css({

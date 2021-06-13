@@ -182,6 +182,7 @@ export const CategoriesStyle = css({
   animationTimingFunction: 'ease',
   marginBottom: '5rem',
   fontWeight: 600,
+  margin: '0 6% 0 10% ',
 
   // img: {
   //   display: 'none',

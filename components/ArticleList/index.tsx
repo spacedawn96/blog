@@ -81,6 +81,7 @@ const ArticleContainer = css({
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
   fontFamily: '"Rubik", "sans-serif"',
+  margin: '0 6% 0 10% ',
   h1: {
     fontSize: '6.25rem',
     '@media (max-width: 1000px)': {
