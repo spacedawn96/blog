@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Layout, Bio, SEO } from '../components/common';
+import { Layout, Bio, SEO } from '../components/Common';
 import { getSortedPosts } from '../utils/posts';
 
 import Header from '../components/Header';
