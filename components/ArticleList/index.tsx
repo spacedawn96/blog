@@ -102,7 +102,7 @@ const ArticleContainer = css({
   h2: {
     fontSize: '5.25rem',
     // color: '#ff4400',
-    padding: '3rem 0',
+    padding: '10% 0',
     color: '#292929',
     '@media (max-width: 1000px)': {
       fontSize: '2rem',
@@ -182,7 +182,7 @@ const ArticleItem = css({
   alignItems: 'center',
 
   '@media (max-width: 1000px)': {
-    padding: '4rem 0',
+    padding: '3rem 0',
   },
 
   small: {

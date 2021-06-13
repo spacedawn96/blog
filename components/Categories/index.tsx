@@ -187,6 +187,7 @@ export const CategoriesStyle = css({
   // },
   '@media (max-width: 1000px)': {
     fontSize: '32px',
+    margin: '0 6% 0 6% ',
   },
 });
 
@@ -199,7 +200,7 @@ export const ProjectList = css({
   marginBottom: '6rem',
   zIndex: 1,
   '@media (max-width: 1000px)': {
-    marginBottom: '0rem',
+    marginBottom: '3rem',
   },
 });
 
