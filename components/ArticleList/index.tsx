@@ -23,7 +23,7 @@ export default function ArticleList({}: ArticleListProps) {
 
   return (
     <main css={ArticleContainer}>
-      <section>
+      <section css={ArticleQuery}>
         <article>
           <div css={ArticleWrapper}>
             <h1 css={ArticleTitle}>{FilterArticle[0]?.name}</h1>
@@ -106,7 +106,6 @@ const ArticleContainer = css({
     color: '#292929',
     '@media (max-width: 1000px)': {
       fontSize: '2rem',
-      margin: ' 0 6% 0 6%',
     },
   },
 
@@ -125,9 +124,14 @@ const ArticleWrapper = css({
   '@media (max-width: 1000px)': {
     display: 'flex',
     flexDirection: 'column',
-    margin: ' 0 6% 0 6%',
   },
   small: {},
+});
+
+const ArticleQuery = css({
+  '@media (max-width: 1000px)': {
+    marginBottom: '3rem',
+  },
 });
 
 const ArticleLeft = css({

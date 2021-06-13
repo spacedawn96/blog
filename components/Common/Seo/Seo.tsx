@@ -18,7 +18,6 @@ export function SEO({ title, description = '' }) {
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:creator" content={siteMetadata.social.twitter} />
       <link rel="icon" type="image/png" href="/static/favicon.ico" />
       <link rel="apple-touch-icon" href="/static/favicon.ico" />
     </Head>

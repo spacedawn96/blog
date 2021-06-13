@@ -92,7 +92,9 @@ const HeaderBlock = css({
   alignItems: 'center',
   transition: 'all .3s ease',
   margin: ' 0 6% 0 10%',
-
+  '@media (max-width: 1000px)': {
+    margin: ' 0 6% 0 6%',
+  },
   ul: {
     margin: 0,
     padding: 0,
@@ -114,6 +116,7 @@ const Nav = css({
   zIndex: 22,
   '@media (max-width: 1000px)': {
     marginBottom: '0rem',
+    marginTop: '0rem',
   },
 });
 

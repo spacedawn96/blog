@@ -1,6 +1,5 @@
 import { css, keyframes } from '@emotion/react';
 import { useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
-import styles from './index.module.css';
 import Link from 'next/link';
 import Fiber from '../Fiber';
 import { SelectContext } from '../../lib/context';
@@ -180,7 +179,6 @@ export const CategoriesStyle = css({
   animationName: 'bottomToTop',
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
-  marginBottom: '5rem',
   fontWeight: 600,
   margin: '0 6% 0 10% ',
 
@@ -198,7 +196,11 @@ export const FiberBlock = css({
 
 export const ProjectList = css({
   // mixBlendMode: 'difference',
+  marginBottom: '6rem',
   zIndex: 1,
+  '@media (max-width: 1000px)': {
+    marginBottom: '0rem',
+  },
 });
 
 const fadein = keyframes`
