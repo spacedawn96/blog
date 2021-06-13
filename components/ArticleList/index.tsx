@@ -81,11 +81,16 @@ const ArticleContainer = css({
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
   fontFamily: '"Rubik", "sans-serif"',
-  margin: '0 6% 0 10% ',
+  margin: ' 0 6% 0 10%',
+
+  '@media (max-width: 1000px)': {
+    margin: ' 0 6% 0 6%',
+  },
+
   h1: {
     fontSize: '6.25rem',
     '@media (max-width: 1000px)': {
-      fontSize: '3.5rem',
+      fontSize: '2.5rem',
     },
   },
   p: {
@@ -98,6 +103,11 @@ const ArticleContainer = css({
     fontSize: '5.25rem',
     // color: '#ff4400',
     padding: '3rem 0',
+    color: '#292929',
+    '@media (max-width: 1000px)': {
+      fontSize: '2rem',
+      margin: ' 0 6% 0 6%',
+    },
   },
 
   small: {
@@ -111,9 +121,11 @@ const ArticleContainer = css({
 const ArticleWrapper = css({
   display: 'flex',
   color: '#292929',
+
   '@media (max-width: 1000px)': {
     display: 'flex',
     flexDirection: 'column',
+    margin: ' 0 6% 0 6%',
   },
   small: {},
 });
@@ -164,6 +176,10 @@ const ArticleItem = css({
   justifyContent: 'space-between',
   padding: '6rem 0',
   alignItems: 'center',
+
+  '@media (max-width: 1000px)': {
+    padding: '4rem 0',
+  },
 
   small: {
     width: '70%',

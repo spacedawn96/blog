@@ -89,18 +89,27 @@ export default function Header(props: HeadereProps) {
 
 const HeaderBlock = css({
   display: 'flex',
-  marginTop: '4rem',
   alignItems: 'center',
   transition: 'all .3s ease',
   margin: ' 0 6% 0 10%',
 
-  '@media (max-width: 1000px)': {
-    margin: ' 0 6% 0 6%',
+  ul: {
+    margin: 0,
+    padding: 0,
+  },
+  li: {
+    margin: 0,
+    padding: 0,
+  },
+  a: {
+    margin: 0,
+    padding: 0,
   },
 });
 
 const Nav = css({
   width: '100%',
+  marginTop: '4rem',
   marginBottom: '6rem',
   zIndex: 22,
   '@media (max-width: 1000px)': {
@@ -110,7 +119,8 @@ const Nav = css({
 
 const HedaerImg = css({
   width: '20rem',
-  height: '7rem',
+  height: 'auto',
+  verticalAlign: 'text-bottom',
   '@media (max-width: 1000px)': {
     width: '145px',
     height: '32px',
@@ -119,6 +129,7 @@ const HedaerImg = css({
 
 const NavList = css({
   display: 'flex',
+  height: '100%',
   alignItems: 'center',
   li: {
     ':nth-of-type(1)': { flexGrow: 0.3 },
@@ -138,6 +149,26 @@ const NavList = css({
     display: 'flex',
     li: {
       ':nth-of-type(1)': { flexGrow: 0.1 },
+      ':nth-of-type(2)': { flexGrow: 2 },
+      ':nth-of-type(3)': { flexGrow: 0 },
+    },
+    fontSize: '14px',
+  },
+
+  '@media (max-width: 768px)': {
+    display: 'flex',
+    li: {
+      ':nth-of-type(1)': { flexGrow: 0.3 },
+      ':nth-of-type(2)': { flexGrow: 2 },
+      ':nth-of-type(3)': { flexGrow: 0 },
+    },
+    fontSize: '14px',
+  },
+
+  '@media (max-width: 576px)': {
+    display: 'flex',
+    li: {
+      ':nth-of-type(1)': { flexGrow: 0.8 },
       ':nth-of-type(2)': { flexGrow: 2 },
       ':nth-of-type(3)': { flexGrow: 0 },
     },

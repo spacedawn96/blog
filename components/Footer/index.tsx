@@ -53,6 +53,9 @@ const FooterStyle = css({
   color: '#292929',
   right: 0,
   margin: '0 6% 0 10% ',
+  '@media (max-width: 1000px)': {
+    marginTop: '5rem',
+  },
 });
 
 const FooterIcon = css({
@@ -65,6 +68,9 @@ const FooterIcon = css({
 
 const FooterContainer = css({
   marginBottom: '12%',
+  '@media (max-width: 1000px)': {
+    margin: '0 6% 0 6% ',
+  },
 });
 
 const FooterEamilFont = css({

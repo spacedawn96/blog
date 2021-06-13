@@ -33,30 +33,30 @@ const initialState: InitialState = {
       post: [
         {
           id: 1,
-          title: 'javascript',
+          title: 'Javascript',
           subtitle: [
             {
-              postTitle: 'L first post',
+              postTitle: 'L First post',
               date: '2021/09/21',
               linkTo: 'coding-post',
             },
             {
-              postTitle: 'L first post22',
+              postTitle: 'L First post22',
               date: '2021/09/21',
               linkTo: 'first-post',
             },
             {
-              postTitle: 'L first post33',
+              postTitle: 'L First post33',
               date: '2021/09/21',
               linkTo: 'long-post',
             },
             {
-              postTitle: 'R first post33',
+              postTitle: 'R First post33',
               date: '2021/09/21',
               linkTo: '2.typescript',
             },
             {
-              postTitle: 'R first post33',
+              postTitle: 'R First post33',
               date: '2021/09/21',
               linkTo: '4.http',
             },
