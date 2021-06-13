@@ -1,12 +1,15 @@
 {
   "siteMetadata": {
-    "title": "Blog",
+    "title": "Next.js Starter Blog",
     "author": {
-      "name": "Spacedawn96",
-      "summary": "blog-v3."
+      "name": "Jose Felix",
+      "summary": "who works building clean user interfaces with React."
     },
     "description": "A blog created with Next.js and Tailwind.css",
-    "siteUrl": "/",
-    "language": "en-US"
+    "siteUrl": "https://nextjs-starter-blog-demo.netlify.app/",
+    "language": "en-US",
+    "social": {
+      "twitter": "Jose_R_Felix"
+    }
   }
 }
