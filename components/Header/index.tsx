@@ -115,7 +115,7 @@ const Nav = css({
   marginBottom: '6rem',
   zIndex: 22,
   '@media (max-width: 1000px)': {
-    marginBottom: '0rem',
+    marginBottom: '1rem',
     marginTop: '0rem',
   },
 });
@@ -140,6 +140,10 @@ const NavList = css({
     ':nth-of-type(3)': { flexGrow: 1 },
     ':nth-of-type(4)': { flexGrow: 0.3 },
     ':nth-of-type(5)': { flexGrow: 0 },
+    '&:hover': {
+      transition: 'color 0.5s ease',
+      color: '#ff4400',
+    },
   },
 
   color: '#292929',
@@ -171,7 +175,17 @@ const NavList = css({
   '@media (max-width: 576px)': {
     display: 'flex',
     li: {
-      ':nth-of-type(1)': { flexGrow: 0.8 },
+      ':nth-of-type(1)': { flexGrow: 0.3 },
+      ':nth-of-type(2)': { flexGrow: 2 },
+      ':nth-of-type(3)': { flexGrow: 0 },
+    },
+    fontSize: '14px',
+  },
+
+  '@media (max-width: 400px)': {
+    display: 'flex',
+    li: {
+      ':nth-of-type(1)': { flexGrow: 0.6 },
       ':nth-of-type(2)': { flexGrow: 2 },
       ':nth-of-type(3)': { flexGrow: 0 },
     },

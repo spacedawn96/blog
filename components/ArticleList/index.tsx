@@ -98,11 +98,18 @@ const ArticleContainer = css({
     marginTop: '10%',
     fontFamily: '"Nunito Sans", sans-serif',
     lineHeight: '1.5rem',
+    '@media (max-width: 1400px)': {
+      marginTop: '15%',
+    },
+
+    '@media (max-width: 1000px)': {
+      marginTop: '3%',
+    },
   },
   h2: {
     fontSize: '5.25rem',
     // color: '#ff4400',
-    padding: '10% 0',
+    padding: '5% 0',
     color: '#292929',
     '@media (max-width: 1000px)': {
       fontSize: '2rem',

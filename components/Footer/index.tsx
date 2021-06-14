@@ -14,14 +14,14 @@ export default function Footer({}: FooterProps) {
         <div css={FooterLeft}>
           <div css={FooterContainer}>
             <ul css={FooterIcon}>
-              <li css={IconBlock}>
+              <li>
                 <Link href="https://github.com/spacedawn96">
-                  <FaGithub size={20} />
+                  <FaGithub size={20} css={IconBlock} />
                 </Link>
               </li>
-              <li css={IconBlock}>
+              <li>
                 <Link href="mailto:spacedawn96@gmail.com">
-                  <SiGmail size={20} />
+                  <SiGmail size={20} css={IconBlock} />
                 </Link>
               </li>
             </ul>
@@ -125,6 +125,7 @@ const FooterBottomContainer = css({
 
 const IconBlock = css({
   '&:hover': {
+    transition: 'color 0.5s ease',
     color: '#ff4400',
   },
 });

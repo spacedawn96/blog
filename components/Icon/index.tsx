@@ -6,22 +6,24 @@ import Link from 'next/link';
 export default function Icon() {
   return (
     <>
-      <li css={IconBlock}>
-        <Link href="https://github.com/spacedawn96">
-          <FaGithub size={20} />
-        </Link>
-      </li>
-      <li css={IconBlock}>
-        <Link href="mailto:spacedawn96@gmail.com">
-          <SiGmail size={20} />
-        </Link>
-      </li>
+      <Link href="https://github.com/spacedawn96">
+        <li>
+          <FaGithub size={20} css={IconBlock} />
+        </li>
+      </Link>
+
+      <Link href="mailto:spacedawn96@gmail.com">
+        <li>
+          <SiGmail size={20} css={IconBlock} />
+        </li>
+      </Link>
     </>
   );
 }
 
 const IconBlock = css({
   '&:hover': {
+    transition: 'color 0.5s ease',
     color: '#ff4400',
   },
 
@@ -29,3 +31,5 @@ const IconBlock = css({
     display: 'none',
   },
 });
+
+const iconWrapper = css({});

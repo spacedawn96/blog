@@ -33,7 +33,7 @@ const initialState: InitialState = {
       post: [
         {
           id: 1,
-          title: 'Javascript',
+          title: 'Title 1',
           subtitle: [
             {
               postTitle: 'L First post',
@@ -64,19 +64,22 @@ const initialState: InitialState = {
         },
         {
           id: 2,
-          title: 'sub2',
+          title: 'Title 2 ',
           subtitle: [
             {
-              postTitle: 'second post',
+              postTitle: 'L second post',
               date: '2021/09/21',
+              linkTo: 'coding-post',
             },
             {
-              postTitle: 'second post22',
+              postTitle: 'L second post22',
               date: '2021/09/21',
+              linkTo: 'coding-post',
             },
             {
-              postTitle: 'second post33',
+              postTitle: 'R second post33',
               date: '2021/09/21',
+              linkTo: 'coding-post',
             },
           ],
         },

@@ -200,7 +200,8 @@ export const ProjectList = css({
   marginBottom: '6rem',
   zIndex: 1,
   '@media (max-width: 1000px)': {
-    marginBottom: '3rem',
+    marginTop: '0rem',
+    marginBottom: '6rem',
   },
 });
 
