@@ -17,10 +17,6 @@ export default function ArticleList({}: ArticleListProps) {
   const ReplacePath = router.asPath.replace('/', '');
   const FilterArticle = filterList.filter((i: any) => i.name == ReplacePath);
 
-  const FilterArticlePostTitle = FilterArticle[0]?.post?.map((el: any) =>
-    el.subtitle.map((ele: any) => ele.postTitle),
-  );
-
   return (
     <main css={ArticleContainer}>
       <section css={ArticleQuery}>
@@ -42,9 +38,11 @@ export default function ArticleList({}: ArticleListProps) {
                         <>
                           <div css={ArticleItem}>
                             <Link href={`/post/${i.linkTo}`}>
-                              <small>{i.postTitle.replace('L ', '')}</small>
+                              <small css={PostTitle}>
+                                {i.postTitle.replace('L ', '')}
+                              </small>
                             </Link>
-                            <div>{i.date}</div>
+                            <span>{i.date}</span>
                           </div>
                         </>
                       ))}
@@ -58,7 +56,7 @@ export default function ArticleList({}: ArticleListProps) {
                             <Link href={`/post/${i.linkTo}`}>
                               <small>{i.postTitle.replace('R ', '')}</small>
                             </Link>
-                            <div>{i.date}</div>
+                            <span>{i.date}</span>
                           </div>
                         </>
                       ))}
@@ -104,6 +102,7 @@ const ArticleContainer = css({
 
     '@media (max-width: 1000px)': {
       marginTop: '3%',
+      marginBottom: '2rem',
     },
   },
   h2: {
@@ -118,10 +117,26 @@ const ArticleContainer = css({
 
   small: {
     fontSize: '2rem',
-    '@media (max-width: 1000px)': {
+    cursor: 'pointer',
+    '@media (max-width: 1400px)': {
       fontSize: '1.5rem',
     },
+
+    '@media (max-width: 576px)': {
+      fontSize: '1rem',
+    },
   },
+
+  span: {
+    cursor: 'pointer',
+    '@media (max-width: 576px)': {
+      fontSize: '0.8rem',
+    },
+  },
+});
+
+const PostTitle = css({
+  textOverflow: 'ellipsis',
 });
 
 const ArticleWrapper = css({

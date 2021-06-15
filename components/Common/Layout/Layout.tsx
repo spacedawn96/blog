@@ -59,7 +59,7 @@ const LargeTitle = () => (
           'sm:text-5xl',
           'dark:text-white',
         )}>
-        Next.Js Starter Blog
+        Home
       </a>
     </Link>
   </h1>
@@ -73,7 +73,7 @@ const SmallTitle = () => (
           'text-2xl font-black text-black no-underline font-display',
           'dark:text-white',
         )}>
-        Next.Js Starter Blog
+        Home
       </a>
     </Link>
   </h1>

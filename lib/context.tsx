@@ -36,7 +36,8 @@ const initialState: InitialState = {
           title: 'Title 1',
           subtitle: [
             {
-              postTitle: 'L First post',
+              postTitle:
+                'L k and Easy Loading Screen With React HooksBuild a Quick and Easy Loading Screen With React HooksBuild a Quick and Easy Loading',
               date: '2021/09/21',
               linkTo: 'coding-post',
             },
@@ -53,12 +54,12 @@ const initialState: InitialState = {
             {
               postTitle: 'R First post33',
               date: '2021/09/21',
-              linkTo: '2.typescript',
+              linkTo: 'long-post',
             },
             {
               postTitle: 'R First post33',
               date: '2021/09/21',
-              linkTo: '4.http',
+              linkTo: 'long-post',
             },
           ],
         },

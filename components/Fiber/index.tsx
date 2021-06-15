@@ -3,8 +3,9 @@ import * as THREE from 'three';
 import { useRef, useState, useMemo, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text, TrackballControls } from '@react-three/drei';
-import randomWord from 'random-words';
 import Link from 'next/link';
+
+import randomWords from 'random-words';
 
 const FiberBlock = css({});
 
@@ -68,7 +69,7 @@ function Cloud({ count = 4, radius = 20 }: any) {
           new THREE.Vector3().setFromSpherical(
             spherical.set(radius, phiSpan * i, thetaSpan * j),
           ),
-          randomWord(),
+          randomWords(),
         ]);
     return temp;
   }, [count, radius]);

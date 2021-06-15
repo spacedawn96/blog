@@ -73,7 +73,10 @@ const FooterContainer = css({
 const FooterEamilFont = css({
   fontSize: '1.5rem',
   '@media (max-width: 1000px)': {
-    fontSize: '20px',
+    fontSize: '1.3rem',
+  },
+  '@media (max-width: 576px)': {
+    fontSize: '1rem',
   },
 });
 
@@ -127,5 +130,6 @@ const IconBlock = css({
   '&:hover': {
     transition: 'color 0.5s ease',
     color: '#ff4400',
+    cursor: 'pointer',
   },
 });

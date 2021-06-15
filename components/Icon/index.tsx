@@ -25,6 +25,7 @@ const IconBlock = css({
   '&:hover': {
     transition: 'color 0.5s ease',
     color: '#ff4400',
+    cursor: 'pointer',
   },
 
   '@media (max-width: 1000px)': {

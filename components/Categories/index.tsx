@@ -130,16 +130,22 @@ export default function Categories({}: CategoriesProps) {
     <main css={CategoriesStyle}>
       <div css={ProjectList}>
         {filterList.map((list: any) => (
-          <Title
-            list={list}
-            setActiveIndex={setActiveIndex}
-            dispatch={dispatch}
-            key={list.id}
-            filterList={filterList}
-            activeFilter={activeFilter}
-            currentState={currentState}
-          />
+          <div>
+            <Title
+              list={list}
+              setActiveIndex={setActiveIndex}
+              dispatch={dispatch}
+              key={list.id}
+              filterList={filterList}
+              activeFilter={activeFilter}
+              currentState={currentState}
+            />
+          </div>
         ))}
+      </div>
+
+      <div css={FiberBlock}>
+        <Fiber />
       </div>
 
       {/* <div css={MediaContainer}>
@@ -159,9 +165,6 @@ export default function Categories({}: CategoriesProps) {
           );
         })}
       </div> */}
-      {/* <div css={FiberBlock}>
-          <Fiber />
-        </div> */}
     </main>
   );
 }
