@@ -27,43 +27,35 @@ export default function ArticleList({}: ArticleListProps) {
           </div>
 
           {FilterArticle[0]?.post?.map((ele: any) => (
-            <>
-              <div>
-                <h2>{ele.title}</h2>
-                <div css={ArticleWrapper}>
-                  <div css={ArticleLeft}>
-                    {ele.subtitle
-                      .filter((ele: any) => ele.postTitle.charAt(0) == 'L')
-                      .map((i: any) => (
-                        <>
-                          <div css={ArticleItem}>
-                            <Link href={`/post/${i.linkTo}`}>
-                              <small css={PostTitle}>
-                                {i.postTitle.replace('L ', '')}
-                              </small>
-                            </Link>
-                            <span>{i.date}</span>
-                          </div>
-                        </>
-                      ))}
-                  </div>
-                  <div css={ArticleRight}>
-                    {ele.subtitle
-                      .filter((ele: any) => ele.postTitle.charAt(0) == 'R')
-                      .map((i: any) => (
-                        <>
-                          <div css={ArticleItem}>
-                            <Link href={`/post/${i.linkTo}`}>
-                              <small>{i.postTitle.replace('R ', '')}</small>
-                            </Link>
-                            <span>{i.date}</span>
-                          </div>
-                        </>
-                      ))}
-                  </div>
+            <div key={ele.id}>
+              <h2>{ele.title}</h2>
+              <div css={ArticleWrapper}>
+                <div css={ArticleLeft}>
+                  {ele.subtitle
+                    .filter((ele: any) => ele.postTitle.charAt(0) == 'L')
+                    .map((i: any) => (
+                      <div css={ArticleItem} key={i.id}>
+                        <Link href={`/post/${i.linkTo}`}>
+                          <small css={PostTitle}>{i.postTitle.replace('L ', '')}</small>
+                        </Link>
+                        <span>{i.date}</span>
+                      </div>
+                    ))}
+                </div>
+                <div css={ArticleRight}>
+                  {ele.subtitle
+                    .filter((ele: any) => ele.postTitle.charAt(0) == 'R')
+                    .map((i: any) => (
+                      <div css={ArticleItem} key={i.id}>
+                        <Link href={`/post/${i.linkTo}`}>
+                          <small>{i.postTitle.replace('R ', '')}</small>
+                        </Link>
+                        <span>{i.date}</span>
+                      </div>
+                    ))}
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </article>
       </section>

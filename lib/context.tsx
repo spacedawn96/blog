@@ -36,27 +36,32 @@ const initialState: InitialState = {
           title: 'Title 1',
           subtitle: [
             {
+              id: 1,
               postTitle:
                 'L k and Easy Loading Screen With React HooksBuild a Quick and Easy Loading Screen With React HooksBuild a Quick and Easy Loading',
               date: '2021/09/21',
               linkTo: 'coding-post',
             },
             {
+              id: 2,
               postTitle: 'L First post22',
               date: '2021/09/21',
               linkTo: 'first-post',
             },
             {
+              id: 3,
               postTitle: 'L First post33',
               date: '2021/09/21',
               linkTo: 'long-post',
             },
             {
+              id: 4,
               postTitle: 'R First post33',
               date: '2021/09/21',
               linkTo: 'long-post',
             },
             {
+              id: 5,
               postTitle: 'R First post33',
               date: '2021/09/21',
               linkTo: 'long-post',
@@ -68,16 +73,19 @@ const initialState: InitialState = {
           title: 'Title 2 ',
           subtitle: [
             {
+              id: 1,
               postTitle: 'L second post',
               date: '2021/09/21',
               linkTo: 'coding-post',
             },
             {
+              id: 2,
               postTitle: 'L second post22',
               date: '2021/09/21',
               linkTo: 'coding-post',
             },
             {
+              id: 3,
               postTitle: 'R second post33',
               date: '2021/09/21',
               linkTo: 'coding-post',

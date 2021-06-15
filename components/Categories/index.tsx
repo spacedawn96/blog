@@ -130,12 +130,11 @@ export default function Categories({}: CategoriesProps) {
     <main css={CategoriesStyle}>
       <div css={ProjectList}>
         {filterList.map((list: any) => (
-          <div>
+          <div key={list.id}>
             <Title
               list={list}
               setActiveIndex={setActiveIndex}
               dispatch={dispatch}
-              key={list.id}
               filterList={filterList}
               activeFilter={activeFilter}
               currentState={currentState}
