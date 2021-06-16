@@ -226,6 +226,10 @@ const ArticleItem = css({
     width: '70%',
     height: 'auto',
     wordWrap: 'break-word',
+    '@media (max-width: 576px)': {
+      fontSize: '1rem',
+      width: '100%',
+    },
   },
 
   div: {},
