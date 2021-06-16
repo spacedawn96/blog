@@ -7,6 +7,56 @@ import { useContext } from 'react';
 
 export type ArticleListProps = {};
 
+export type ArticleProps = {
+  ele: any;
+};
+
+export type ArticleHeaderProps = {
+  i: any;
+  isRight: any;
+};
+
+function ArticleHeader(props: ArticleHeaderProps) {
+  return (
+    <div css={ArticleItem}>
+      <Link href={`/post/${props.i.linkTo}`}>
+        <small css={PostTitle}>
+          {props.isRight == true
+            ? props.i.postTitle.replace('R ', '')
+            : props.i.postTitle.replace('L ', '')}
+        </small>
+      </Link>
+      <span>{props.i.date}</span>
+    </div>
+  );
+}
+
+function Article(props: ArticleProps) {
+  return (
+    <div>
+      <h2>{props.ele.title}</h2>
+      <div css={ArticleWrapper}>
+        <div css={ArticleLeft}>
+          {props.ele.subtitle
+            .filter((ele: any) => ele.postTitle.charAt(0) == 'L')
+            .map((i: any) => (
+              <ArticleHeader i={i} isRight={false} key={i.id} />
+            ))}
+        </div>
+        <div css={ArticleRight}>
+          {props.ele.subtitle
+            .filter((ele: any) => ele.postTitle.charAt(0) == 'R')
+            .map((i: any) => (
+              <ArticleHeader i={i} isRight={true} key={i.id} />
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const ArticleBlock = css({});
+
 export default function ArticleList({}: ArticleListProps) {
   const router = useRouter();
   const {
@@ -27,35 +77,7 @@ export default function ArticleList({}: ArticleListProps) {
           </div>
 
           {FilterArticle[0]?.post?.map((ele: any) => (
-            <div key={ele.id}>
-              <h2>{ele.title}</h2>
-              <div css={ArticleWrapper}>
-                <div css={ArticleLeft}>
-                  {ele.subtitle
-                    .filter((ele: any) => ele.postTitle.charAt(0) == 'L')
-                    .map((i: any) => (
-                      <div css={ArticleItem} key={i.id}>
-                        <Link href={`/post/${i.linkTo}`}>
-                          <small css={PostTitle}>{i.postTitle.replace('L ', '')}</small>
-                        </Link>
-                        <span>{i.date}</span>
-                      </div>
-                    ))}
-                </div>
-                <div css={ArticleRight}>
-                  {ele.subtitle
-                    .filter((ele: any) => ele.postTitle.charAt(0) == 'R')
-                    .map((i: any) => (
-                      <div css={ArticleItem} key={i.id}>
-                        <Link href={`/post/${i.linkTo}`}>
-                          <small>{i.postTitle.replace('R ', '')}</small>
-                        </Link>
-                        <span>{i.date}</span>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            </div>
+            <Article ele={ele} key={ele.id} />
           ))}
         </article>
       </section>
@@ -116,13 +138,14 @@ const ArticleContainer = css({
 
     '@media (max-width: 576px)': {
       fontSize: '1rem',
+      width: '100%',
     },
   },
 
   span: {
     cursor: 'pointer',
     '@media (max-width: 576px)': {
-      fontSize: '0.8rem',
+      display: 'none',
     },
   },
 });
