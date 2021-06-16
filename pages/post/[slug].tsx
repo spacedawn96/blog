@@ -16,7 +16,9 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
 
       <article>
         <header className="mb-8">
-          <h1 className="mb-2 text-6xl font-black leading-none font-display">
+          <h1
+            className="mb-2 text-6xl font-black leading-none font-display"
+            style={{ paddingBottom: '1rem' }}>
             {frontmatter.title}
           </h1>
           <p className="text-sm">{frontmatter.date}</p>

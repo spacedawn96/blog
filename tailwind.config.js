@@ -2,6 +2,7 @@ const defaultSans = [
   'system-ui',
   '-apple-system',
   'BlinkMacSystemFont',
+  'Noto Sans KR',
   '"Segoe UI"',
   'Roboto',
   '"Helvetica Neue"',
@@ -14,7 +15,14 @@ const defaultSans = [
   '"Noto Color Emoji"',
 ];
 
-const defaultSerif = ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'];
+const defaultSerif = [
+  'Georgia',
+  'Cambria',
+  '"Times New Roman"',
+  'Times',
+  'sans-serif',
+  'serif',
+];
 
 module.exports = {
   purge: {
@@ -51,6 +59,23 @@ module.exports = {
             },
             a: {
               color: theme('colors.neon-orange'),
+            },
+          },
+        },
+
+        lg: {
+          css: {
+            h1: {
+              fontSize: '2.5rem',
+              color: '#292929',
+            },
+            p: {
+              fontSize: '1.125rem',
+              color: '#292929',
+            },
+            li: {
+              fontSize: '1.125rem',
+              color: '#292929',
             },
           },
         },

@@ -51,7 +51,7 @@ const Header = () => {
 };
 
 const LargeTitle = () => (
-  <h1>
+  <h1 style={{ paddingBottom: '0.5rem' }}>
     <Link href="/">
       <a
         className={clsx(
@@ -66,7 +66,7 @@ const LargeTitle = () => (
 );
 
 const SmallTitle = () => (
-  <h1>
+  <h1 style={{ paddingBottom: '0.5rem' }}>
     <Link href="/">
       <a
         className={clsx(

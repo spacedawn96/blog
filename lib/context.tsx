@@ -40,7 +40,7 @@ const initialState: InitialState = {
               postTitle:
                 'L k and Easy Loading Screen With React HooksBuild a Quick and Easy Loading Screen With React HooksBuild a Quick and Easy Loading',
               date: '2021/09/21',
-              linkTo: 'coding-post',
+              linkTo: 'second-post',
             },
             {
               id: 2,
