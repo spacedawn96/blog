@@ -120,7 +120,7 @@ const ArticleContainer = css({
     },
   },
   h2: {
-    fontSize: '5.25rem',
+    fontSize: '4.25rem',
     // color: '#ff4400',
     padding: '5% 0',
     color: '#292929',
@@ -130,7 +130,7 @@ const ArticleContainer = css({
   },
 
   small: {
-    fontSize: '2rem',
+    fontSize: '3rem',
     cursor: 'pointer',
     '@media (max-width: 1400px)': {
       fontSize: '1.5rem',
@@ -215,7 +215,7 @@ const ArticleMiddle = css({
 const ArticleItem = css({
   display: 'flex',
   justifyContent: 'space-between',
-  padding: '6rem 0',
+  padding: '4rem 0',
   alignItems: 'center',
 
   '@media (max-width: 1000px)': {
@@ -227,7 +227,7 @@ const ArticleItem = css({
     height: 'auto',
     wordWrap: 'break-word',
     '@media (max-width: 576px)': {
-      fontSize: '1rem',
+      fontSize: '2rem',
       width: '100%',
     },
   },

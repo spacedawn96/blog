@@ -194,7 +194,7 @@ export const CategoriesStyle = css({
 });
 
 export const FiberBlock = css({
-  marginLeft: '10%',
+  marginLeft: '20%',
 });
 
 export const ProjectList = css({

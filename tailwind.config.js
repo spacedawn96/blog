@@ -67,15 +67,12 @@ module.exports = {
           css: {
             h1: {
               fontSize: '2.5rem',
-              color: '#292929',
             },
             p: {
               fontSize: '1.125rem',
-              color: '#292929',
             },
             li: {
               fontSize: '1.125rem',
-              color: '#292929',
             },
           },
         },
