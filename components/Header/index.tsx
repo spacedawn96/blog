@@ -48,7 +48,7 @@ export default function Header(props: HeadereProps) {
   return (
     <header css={HeaderBlock}>
       <nav css={Nav}>
-        <div>
+        <Trail open={open}>
           <ul css={NavList}>
             <li>
               <Link href="/">
@@ -83,7 +83,7 @@ export default function Header(props: HeadereProps) {
             </li>
             <Icon />
           </ul>
-        </div>
+        </Trail>
       </nav>
     </header>
   );

@@ -62,15 +62,13 @@ function Title(props: TitleProps) {
   const TrimTitle = props.list.name.replace(/ /g, '');
 
   return (
-    <Trail open={true}>
-      <Link href={{ pathname: `${TrimTitle}` }}>
-        <div className="project-list" css={TitleBlock}>
-          <div css={ProjectTitle} className="project-title">
-            <span> {props.list.name}</span>
-          </div>
+    <Link href={{ pathname: `${TrimTitle}` }}>
+      <div className="project-list" css={TitleBlock}>
+        <div css={ProjectTitle} className="project-title">
+          <span> {props.list.name}</span>
         </div>
-      </Link>
-    </Trail>
+      </div>
+    </Link>
   );
 }
 
