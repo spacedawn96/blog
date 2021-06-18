@@ -115,7 +115,7 @@ const ArticleContainer = css({
 
     '@media (max-width: 1000px)': {
       marginTop: '3%',
-      marginBottom: '2rem',
+      marginBottom: '0.5rem',
     },
   },
   h2: {
@@ -132,7 +132,7 @@ const ArticleContainer = css({
     fontSize: '3rem',
     cursor: 'pointer',
     '@media (max-width: 1600px)': {
-      fontSize: '1.8rem',
+      fontSize: '1.5rem',
     },
 
     '@media (max-width: 576px)': {

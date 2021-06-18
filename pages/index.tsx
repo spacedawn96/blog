@@ -5,7 +5,7 @@ import { getSortedPosts } from '../utils/posts';
 
 import Header from '../components/Header';
 import Categories from '../components/Categories';
-
+import { css } from '@emotion/react';
 import Footer from '../components/Footer';
 import { Trail } from '../components/Animation/Trail';
 import { useState } from 'react';
@@ -18,7 +18,18 @@ export default function Home({ posts }) {
     <>
       <Header />
       <Categories />
-      <Footer />
+      <div css={IndexBlock}>
+        <Footer />
+      </div>
     </>
   );
 }
+
+const IndexBlock = css({
+  marginTop: '13rem',
+  '@media (max-width: 1000px)': {
+    position: 'absolute',
+    bottom: '0',
+    margin: '0 6% 0 6%',
+  },
+});

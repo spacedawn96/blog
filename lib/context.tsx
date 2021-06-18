@@ -60,11 +60,16 @@ const initialState: InitialState = {
               date: '2021/06/18',
               linkTo: 'typescriptFunction',
             },
+            {
+              postTitle: 'L Typescript 클래스',
+              date: '2021/06/18',
+              linkTo: 'typescriptClass',
+            },
           ],
         },
         {
           id: 2,
-          title: '',
+          title: 'Typescript advance',
           subtitle: [
             {
               postTitle: 'second post',

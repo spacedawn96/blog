@@ -114,7 +114,10 @@ const Nav = css({
   marginTop: '4rem',
   marginBottom: '4rem',
   zIndex: 22,
-  '@media (max-width: 1000px)': {},
+  '@media (max-width: 1000px)': {
+    marginTop: '3rem',
+    marginBottom: '2rem',
+  },
 });
 
 const HedaerImg = css({
