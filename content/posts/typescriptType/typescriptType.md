@@ -114,8 +114,8 @@ type I3 = Person[AliveOrName]; // type I3 = string | boolean
 
 * null : null은 값이 없습니다
 * undefined : undefined은 값을 아직 정의하지 않습니다
-* void : void는 아무것도 반환하지 않는 함수의 반환 타입입니다 (예: console.log)
-* never : nerver은 절대 반환하지 않는(예외나 영원히 실행되는) 함수 타입을 가르킵니다
+* void : void는 아무것도 반환하지 않는 함수의 반환 타입 입니다 (예: console.log)
+* never : never은 절대 반환하지 않는(예외나 영원히 실행되는) 함수 타입을 가르킵니다
 
 ```ts
 function a(x: number){
@@ -141,7 +141,7 @@ function d(){
 } // never
 ```
 
-### 5.Enum
+### 6.Enum
 
 열거형은 해당 타입으로 사용할 수 있는 값을 열거 하는 방법이다 열거형은 키를 값에 할당하는, 순서가 없는 자료구조 입니다
 
@@ -157,5 +157,23 @@ enum Language {
   Spanish = 1
   Russian = 2
 } // 일반적으로 값을 명시 해주는 것이 더 좋습니다
+```
+
+enum을 여러 개로 나눠 정의한 다음 타입스크립트로 합칠 수 있습니다
+```ts
+enum Language {
+  English = 0,
+  Spanish = 1
+} 
+
+enum Language {
+  Russian = 2
+} 
+
+enum Language {
+   English = 100,
+   Spanish = 200 + 300
+   Russian  // 타입스크립트가 자동으로 501을 계산해줍니다
+} 
 ```
 

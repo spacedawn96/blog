@@ -48,12 +48,17 @@ const initialState: InitialState = {
       post: [
         {
           id: 1,
-          title: 'Typescript 타입',
+          title: 'Typescript 문법',
           subtitle: [
             {
               postTitle: 'L Typescript 타입',
               date: '2021/06/17',
-              linkTo: 'typescript',
+              linkTo: 'typescriptType',
+            },
+            {
+              postTitle: 'L Typescript 함수',
+              date: '2021/06/18',
+              linkTo: 'typescriptFunction',
             },
           ],
         },
