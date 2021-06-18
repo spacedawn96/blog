@@ -1,5 +1,5 @@
 ---
-title: Typescript 타입
+title: Typescript type
 description: The first post is the most memorable one.
 date: 2021-06-17T11:00:00.000Z
 ---
@@ -110,7 +110,52 @@ type I2 = Person[keyof Person]; // type I2 = string | number | boolean
 type AliveOrName = "alive" | "name";
 type I3 = Person[AliveOrName]; // type I3 = string | boolean
  ```
+### 5.Null, Undefined, nerver, void
 
-### 5.Union Types
+* null : null은 값이 없습니다
+* undefined : undefined은 값을 아직 정의하지 않습니다
+* void : void는 아무것도 반환하지 않는 함수의 반환 타입입니다 (예: console.log)
+* never : nerver은 절대 반환하지 않는(예외나 영원히 실행되는) 함수 타입을 가르킵니다
 
+```ts
+function a(x: number){
+  if(x < 10){
+    return x
+  }
+
+  return null
+} // null
+
+function b(){
+  return undefined
+} // undefined
+
+function c(){
+  let a = 2+2
+} // void
+
+function d(){
+  while(true){
+     do()
+  }
+} // never
+```
+
+### 5.Enum
+
+열거형은 해당 타입으로 사용할 수 있는 값을 열거 하는 방법이다 열거형은 키를 값에 할당하는, 순서가 없는 자료구조 입니다
+
+```ts
+enum Language {
+  English,
+  Spanish,
+  Russian
+}
+
+enum Language {
+  English = 0,
+  Spanish = 1
+  Russian = 2
+} // 일반적으로 값을 명시 해주는 것이 더 좋습니다
+```
 

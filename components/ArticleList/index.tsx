@@ -131,8 +131,8 @@ const ArticleContainer = css({
   small: {
     fontSize: '3rem',
     cursor: 'pointer',
-    '@media (max-width: 1400px)': {
-      fontSize: '1.5rem',
+    '@media (max-width: 1600px)': {
+      fontSize: '1.8rem',
     },
 
     '@media (max-width: 576px)': {
@@ -225,7 +225,6 @@ const ArticleItem = css({
     height: 'auto',
     wordWrap: 'break-word',
     '@media (max-width: 576px)': {
-      fontSize: '2rem',
       width: '100%',
     },
   },

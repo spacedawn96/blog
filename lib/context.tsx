@@ -21,15 +21,7 @@ const initialState: InitialState = {
       name: 'Javascript',
       url: '/javascript.png',
       descriable: `
-      This was a dream project and an honor to represent Walt’s wonderful
-      creation: Mickey Mouse, an American icon. When I received the proposal from
-      the Walt Disney Company to paint 100 Mickey’s (in 2002), I packed up my
-      paints and brushes and flew to a little island in the Caribbean. Inspired by
-      nature’s colors — and the occasional plunge in the river — I returned two
-      weeks later with the first 21 mice. That was the easy part. The next 79 were
-      more challenging and took 16 months to finish. The challenge was to make
-      each one a different pose, style, or medium, as well as paying homage to the
-      history of Mickey Mouse.`,
+      JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.`,
       post: [
         {
           id: 1,
