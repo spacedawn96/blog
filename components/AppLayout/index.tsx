@@ -8,11 +8,11 @@ export type AppLayoutProps = {
 
 export default function AppLayout(props: AppLayoutProps) {
   return (
-    <Trail open={true}>
+    <div>
       <Header />
       {props.children}
       <Footer />
-    </Trail>
+    </div>
   );
 }
 

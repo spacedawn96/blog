@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
+import { Trail } from '../Animation/Trail';
 
 export type ArticleListProps = {};
 
@@ -70,16 +71,13 @@ export default function ArticleList({}: ArticleListProps) {
   return (
     <main css={ArticleContainer}>
       <section css={ArticleQuery}>
-        <article>
-          <div css={ArticleWrapper}>
-            <h1 css={ArticleTitle}>{FilterArticle[0]?.name}</h1>
-            <p css={ArticleMiddle}>{FilterArticle[0]?.descriable}</p>
-          </div>
-
-          {FilterArticle[0]?.post?.map((ele: any) => (
-            <Article ele={ele} key={ele.id} />
-          ))}
-        </article>
+        <div css={ArticleWrapper}>
+          <h1 css={ArticleTitle}>{FilterArticle[0]?.name}</h1>
+          <p css={ArticleMiddle}>{FilterArticle[0]?.descriable}</p>
+        </div>
+        {FilterArticle[0]?.post?.map((ele: any) => (
+          <Article ele={ele} key={ele.id} />
+        ))}
       </section>
     </main>
   );

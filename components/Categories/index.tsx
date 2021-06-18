@@ -3,7 +3,7 @@ import { useCallback, useContext, useEffect, useLayoutEffect, useState } from 'r
 import Link from 'next/link';
 import Fiber from '../Fiber';
 import { SelectContext } from '../../lib/context';
-
+import { Trail } from '../Animation/Trail';
 export type CategoriesProps = {};
 
 export type TitleProps = {
@@ -62,13 +62,15 @@ function Title(props: TitleProps) {
   const TrimTitle = props.list.name.replace(/ /g, '');
 
   return (
-    <Link href={{ pathname: `${TrimTitle}` }}>
-      <div className="project-list" css={TitleBlock}>
-        <div css={ProjectTitle} className="project-title">
-          <span> {props.list.name}</span>
+    <Trail open={true}>
+      <Link href={{ pathname: `${TrimTitle}` }}>
+        <div className="project-list" css={TitleBlock}>
+          <div css={ProjectTitle} className="project-title">
+            <span> {props.list.name}</span>
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </Trail>
   );
 }
 
