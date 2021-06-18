@@ -16,9 +16,9 @@ export default function Home({ posts }) {
 
   return (
     <>
-      <AppLayout>
-        <Categories />
-      </AppLayout>
+      <Header />
+      <Categories />
+      <Footer />
     </>
   );
 }

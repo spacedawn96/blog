@@ -24,13 +24,13 @@ Typescript는 컴파일러가 코드를 바이트코드 대신 자바스크립�
 타입스크립트는 컴파일 타임에 문법 에러와 타입 관련 에러를 모두 검출합니다
 ## Typescript types
 
-### 1.any
+### 1.Any
 
 any는 사용하지 않는 것이 좋습니다
 
 > nolmplicitAny : 암묵적인 any가 나타났을 때 예외를 일으키고 싶다면 nolmplicitAny 활성화 하면 됩니다
 
-### 2.unknown
+### 2.Unknown
 
 타입을 알 수 없는 값이 있을 때 any 대신 unknown을 사용합시다 
 
@@ -60,7 +60,7 @@ function stringifyForLogging(value: unknown): string {
 ```
 
 
-### 3.boolean
+### 3.Boolean
 
  boolean은 타입 true false 두 개의 값을 갖습니다  이 타입으로 비교연산(==,===,||,&&) 등 유용하게 사용 할 수 있습니다 
  
@@ -72,7 +72,7 @@ let d : boolean = true
 let d : true = true // true
 ```
 
-### 4.object
+### 4.Object
 
 타입스크립트는 객체 프로퍼티에 엄격한 편입니다 예를 들어
 
@@ -111,4 +111,5 @@ type AliveOrName = "alive" | "name";
 type I3 = Person[AliveOrName]; // type I3 = string | boolean
  ```
 
- 
+### 4. Union Types
+
