@@ -47,46 +47,44 @@ export default function Header(props: HeadereProps) {
 
   return (
     <header css={HeaderBlock}>
-      {(
-        <nav css={Nav}>
-          <Trail open={open}>
-            <ul css={NavList}>
-              <li>
-                <Link href="/">
-                  <a
-                    style={{
-                      color: router.asPath == '/about' ? '#292929' : '#ff4400',
-                      borderBottom: router.asPath == '/about' ? '0' : '4px solid #ff4400',
-                      paddingBottom: router.asPath == '/about' ? '0rem' : '0.3rem',
-                    }}>
-                    POST
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <a
-                    style={{
-                      color: router.asPath == '/about' ? '#ff4400' : '#292929',
-                      borderBottom: router.asPath == '/about' ? '4px solid #ff4400' : '0',
-                      paddingBottom: router.asPath == '/about' ? '0.3rem' : '0',
-                    }}>
-                    ABOUT
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <a>
-                    <img src="/signature.png" alt="signature" css={HedaerImg} />
-                  </a>
-                </Link>
-              </li>
-              <Icon />
-            </ul>
-          </Trail>
-        </nav>
-      ) || <Skeleton count={10} />}
+      <nav css={Nav}>
+        <div>
+          <ul css={NavList}>
+            <li>
+              <Link href="/">
+                <a
+                  style={{
+                    color: router.asPath == '/about' ? '#292929' : '#ff4400',
+                    borderBottom: router.asPath == '/about' ? '0' : '4px solid #ff4400',
+                    paddingBottom: router.asPath == '/about' ? '0rem' : '0.3rem',
+                  }}>
+                  POST
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a
+                  style={{
+                    color: router.asPath == '/about' ? '#ff4400' : '#292929',
+                    borderBottom: router.asPath == '/about' ? '4px solid #ff4400' : '0',
+                    paddingBottom: router.asPath == '/about' ? '0.3rem' : '0',
+                  }}>
+                  ABOUT
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a>
+                  <img src="/signature.png" alt="signature" css={HedaerImg} />
+                </a>
+              </Link>
+            </li>
+            <Icon />
+          </ul>
+        </div>
+      </nav>
     </header>
   );
 }

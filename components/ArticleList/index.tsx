@@ -92,7 +92,8 @@ const ArticleContainer = css({
   animationName: 'bottomToTop',
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
-  fontFamily: '"Rubik", "sans-serif"',
+  fontFamily: '"Rubik","sans-serif" ',
+
   margin: ' 0 6% 0 10%',
 
   '@media (max-width: 1000px)': {
@@ -137,8 +138,7 @@ const ArticleContainer = css({
     },
 
     '@media (max-width: 576px)': {
-      fontSize: '1rem',
-      width: '100%',
+      fontSize: '1.3rem',
     },
   },
 
