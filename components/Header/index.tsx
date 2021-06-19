@@ -114,6 +114,7 @@ const Nav = css({
   marginTop: '4rem',
   marginBottom: '4rem',
   zIndex: 22,
+
   '@media (max-width: 1000px)': {
     marginTop: '3rem',
     marginBottom: '2rem',
@@ -122,11 +123,10 @@ const Nav = css({
 
 const HedaerImg = css({
   width: '20rem',
-  height: 'auto',
-  verticalAlign: 'text-bottom',
+
   '@media (max-width: 1000px)': {
-    width: '145px',
-    height: '32px',
+    width: '9.0625rem',
+    height: '2rem',
   },
 });
 
@@ -159,7 +159,7 @@ const NavList = css({
       ':nth-of-type(2)': { flexGrow: 2 },
       ':nth-of-type(3)': { flexGrow: 0 },
     },
-    fontSize: '14px',
+    fontSize: '0.9rem',
   },
 
   '@media (max-width: 768px)': {
@@ -169,7 +169,7 @@ const NavList = css({
       ':nth-of-type(2)': { flexGrow: 2 },
       ':nth-of-type(3)': { flexGrow: 0 },
     },
-    fontSize: '14px',
+    fontSize: '0.9rem',
   },
 
   '@media (max-width: 576px)': {
@@ -179,7 +179,7 @@ const NavList = css({
       ':nth-of-type(2)': { flexGrow: 2 },
       ':nth-of-type(3)': { flexGrow: 0 },
     },
-    fontSize: '14px',
+    fontSize: '0.9rem',
   },
 
   '@media (max-width: 400px)': {
@@ -189,6 +189,6 @@ const NavList = css({
       ':nth-of-type(2)': { flexGrow: 2 },
       ':nth-of-type(3)': { flexGrow: 0 },
     },
-    fontSize: '14px',
+    fontSize: '0.9rem',
   },
 });

@@ -217,7 +217,7 @@ const ArticleItem = css({
   alignItems: 'center',
 
   '@media (max-width: 1000px)': {
-    padding: '3rem 0',
+    padding: '2rem 0',
   },
 
   small: {

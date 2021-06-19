@@ -6,7 +6,6 @@ const AboutMain = css({
   fontSize: '1.25rem',
   lineHeight: '2.215rem',
   fontFamily: '"Aeonik-Light","Helvetica","Arial",sans-serif',
-  border: '1px solid red',
   whiteSpace: 'initial',
   width: '50%',
   div: {

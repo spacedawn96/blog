@@ -18,6 +18,25 @@ const initialState: InitialState = {
   filterList: [
     {
       id: 1,
+      name: 'React',
+      url: '/javascript.png',
+      descriable: `
+      React is an open-source front-end JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. `,
+      post: [
+        {
+          id: 1,
+          title: '',
+          subtitle: [],
+        },
+        {
+          id: 2,
+          title: '',
+          subtitle: [],
+        },
+      ],
+    },
+    {
+      id: 2,
       name: 'Javascript',
       url: '/javascript.png',
       descriable: `
@@ -36,7 +55,7 @@ const initialState: InitialState = {
       ],
     },
     {
-      id: 2,
+      id: 3,
       name: 'Typescript',
       url: '/typescript.png',
       descriable: `
@@ -48,20 +67,65 @@ const initialState: InitialState = {
       post: [
         {
           id: 1,
-          title: 'Typescript 문법',
+          title: 'Typescript Types',
           subtitle: [
             {
-              postTitle: 'L Typescript 타입',
+              id: 1,
+              postTitle: 'L Baisc Type',
               date: '2021/06/17',
               linkTo: 'typescriptType',
             },
             {
-              postTitle: 'L Typescript 함수',
+              id: 2,
+              postTitle: 'L Funtion Type',
+              date: '2021/06/18',
+              linkTo: 'typescriptFunction',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'Typescript advance',
+          subtitle: [
+            {
+              postTitle: 'second post',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post22',
+              date: '2021/09/21',
+            },
+            {
+              postTitle: 'second post33',
+              date: '2021/09/21',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: 'Design Patterns',
+      url: '/typescript.png',
+      descriable: `
+      In software engineering, a software design pattern is a general, reusable solution to a commonly occurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code`,
+      post: [
+        {
+          id: 1,
+          title: 'Design Pattern',
+          subtitle: [
+            {
+              postTitle: 'L 패턴',
+              date: '2021/06/17',
+              linkTo: 'typescriptType',
+            },
+            {
+              postTitle: ' Typescript 함수',
               date: '2021/06/18',
               linkTo: 'typescriptFunction',
             },
             {
-              postTitle: 'L Typescript 클래스',
+              postTitle: ' Typescript 클래스',
               date: '2021/06/18',
               linkTo: 'typescriptClass',
             },

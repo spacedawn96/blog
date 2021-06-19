@@ -29,6 +29,8 @@ to {
 `;
 
 const TitleBlock = css({
+  width: '120%',
+
   '&:hover': {
     transition: 'color 0.5s ease',
     color: '#ff4400',
@@ -36,6 +38,7 @@ const TitleBlock = css({
 });
 
 const MedeiaBlock = css({});
+const ProjectName = css({});
 
 const ProjectTitle = css({
   transition: 'opacity .35s cubic-bezier(.77,0,0.175,1),',
@@ -65,7 +68,7 @@ function Title(props: TitleProps) {
     <Link href={{ pathname: `${TrimTitle}` }}>
       <div className="project-list" css={TitleBlock}>
         <div css={ProjectTitle} className="project-title">
-          <span> {props.list.name}</span>
+          <span css={ProjectName}> {props.list.name}</span>
         </div>
       </div>
     </Link>
@@ -188,13 +191,14 @@ export const CategoriesStyle = css({
   //   display: 'none',
   // },
   '@media (max-width: 1000px)': {
-    fontSize: '32px',
+    fontSize: '2rem',
     margin: '0 6% 0 6% ',
   },
 });
 
 export const FiberBlock = css({
-  marginLeft: '20%',
+  position: 'absolute',
+  left: '60%',
 });
 
 export const ProjectList = css({
