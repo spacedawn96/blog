@@ -24,13 +24,102 @@ Typescript는 컴파일러가 코드를 바이트코드 대신 자바스크립�
 타입스크립트는 컴파일 타임에 문법 에러와 타입 관련 에러를 모두 검출합니다
 ## Typescript types
 
-### 1.Any
+![Cat](typescript.png)
+
+### 1.String
+
+string은 문자열 리터럴 또는 템플릿 문자열과 같은 텍스트 데이터 유형에 사용 됩니다 
+```ts
+const language: string = 'TypeScript';
+const message: string = `I'm programming in ${language}!`;
+```
+
+### 2.number
+
+number은 다음과 같이 정수 및 부동 소수점을 나타내는데 사용됩니다
+
+```ts
+let first:number = 123; // number 
+let second: number = 0x37CF;  // hexadecimal
+let third:number=0o377 ;      // octal
+let fourth: number = 0b111001;// binary  
+
+console.log(first);  // 123 
+console.log(second); // 14287
+console.log(third);  // 255
+console.log(fourth); // 57 
+```
+### 3.Array
+
+배열은 두 가지 사용법이 있습니다 
+
+```ts
+const primeNumbers: number[] = [2, 3, 5, 7, 11]; 
+
+const primeNumbers: Array<number> = [2, 3, 5, 7, 11];
+```
+
+두 가지 방법 모두 동일 합니다, 보통 배열을 만들때  
+
+```ts
+let fruits: string[] = ['Apple', 'Orange', 'Banana']; 
+
+let fruits: Array<string> = ['Apple', 'Orange', 'Banana']; // 이렇게 배열을 타입을 정해서 만드는 것이 좋습니다
+
+```
+
+두 가지 방법 모두 동일합니다 
+
+```ts
+let values: (string | number)[] = ['Apple', 2, 'Orange', 3, 4, 'Banana']; 
+// or 
+let values: Array<string | number> = ['Apple', 2, 'Orange', 3, 4, 'Banana']; 
+```
+
+배열은 다양한 데이터 타입을 함께 쓸 수 있습니다 
+
+### 4.BigInt
+
+bigint는 es2020의 새로운 타입 입니다 
+
+```ts
+const bigNumber: BigInt = 9007199254740993n;
+
+const myBigInt = BigInt(9007199254740992);
+const myBigInt2 = 9007199254740992n;
+console.log(myBigInt);  //9007199254740992n
+console.log(myBigInt2); //9007199254740992n
+
+```
+
+bigint는 number와 비교 했을때 완전히 같지는 않습니다
+
+```ts
+console.log(0n == 0); // true
+console.log(0n === 0); // false
+console.log(1n < 2); // true
+```
+
+### 5.Symbol
+
+심벌은 es2015에 추가된 기능힙니다 심벌은 객체와 맵에서 문자열 키를 대신하는 용도로 사용됩니다
+
+```ts
+let a = Symbol('a') //symbol
+let b = Symbol('a') //symbol
+var c = a === b //false
+```
+자바스크립트에서 Symbol('a')는 주어진 이름으로 새로운 Symbol을 만든다는 의미 입니다 symbol은 uniqe하여 다른 symbol과 == 또는 ===로 비교했을때 같지 않다고 판단 됩니다
+
+
+
+### 6.Any
 
 any는 사용하지 않는 것이 좋습니다
 
 > nolmplicitAny : 암묵적인 any가 나타났을 때 예외를 일으키고 싶다면 nolmplicitAny 활성화 하면 됩니다
 
-### 2.Unknown
+### 7.Unknown
 
 타입을 알 수 없는 값이 있을 때 any 대신 unknown을 사용합시다 
 
@@ -60,7 +149,7 @@ function stringifyForLogging(value: unknown): string {
 ```
 
 
-### 3.Boolean
+### 8.Boolean
 
  boolean은 타입 true false 두 개의 값을 갖습니다  이 타입으로 비교연산(==,===,||,&&) 등 유용하게 사용 할 수 있습니다 
  
@@ -72,7 +161,7 @@ let d : boolean = true
 let d : true = true // true
 ```
 
-### 4.Object
+### 9.Object
 
 타입스크립트는 객체 프로퍼티에 엄격한 편입니다 예를 들어
 
@@ -110,7 +199,7 @@ type I2 = Person[keyof Person]; // type I2 = string | number | boolean
 type AliveOrName = "alive" | "name";
 type I3 = Person[AliveOrName]; // type I3 = string | boolean
  ```
-### 5.Null, Undefined, nerver, void
+### 10.Null, Undefined, nerver, void
 
 * null : null은 값이 없습니다
 * undefined : undefined은 값을 아직 정의하지 않습니다
@@ -141,39 +230,109 @@ function d(){
 } // never
 ```
 
-### 6.Enum
+### 11.Enum
 
-열거형은 해당 타입으로 사용할 수 있는 값을 열거 하는 방법이다 열거형은 키를 값에 할당하는, 순서가 없는 자료구조 입니다
+Enum은 해당 타입으로 사용할 수 있는 값을 열거 하는 방법이다 Enum은 키를 값에 할당하는, 순서가 없는 자료구조 입니다 
+
 
 ```ts
-enum Language {
-  English,
-  Spanish,
-  Russian
+enum PrintMedia {
+  Newspaper,
+  Newsletter,
+  Magazine,
+  Book
+} 
+
+
+enum PrintMedia {
+  Newspaper = 1 // 첫 번째 값을 직접 초기화 할 수 있습니다 
+  Newsletter,
+  Magazine,
+  Book
+} 
+
+
+enum PrintMedia {
+    Newspaper = 1,
+    Newsletter = 5,
+    Magazine = 5,
+    Book = 10
+} // enum은 순차적인 값을 사용할 필요가 없습니다 
+
+```
+
+첫 번째 enum입니다 enum은 저장 될 때 항상 숫자 값이 할당 됩니다  첫 번째는 0  그 다음 값은 1씩 증가 합니다 
+
+```ts
+enum PrintMedia {
+    Newspaper = 1,
+    Newsletter,
+    Magazine,
+    Book
 }
 
-enum Language {
-  English = 0,
-  Spanish = 1
-  Russian = 2
-} // 일반적으로 값을 명시 해주는 것이 더 좋습니다
-```
+function getMedia(mediaName: string): PrintMedia {
+    if (  mediaName === 'Forbes' || mediaName === 'Outlook') {
+        return PrintMedia.Magazine;
+    }
+ }
 
-enum을 여러 개로 나눠 정의한 다음 타입스크립트로 합칠 수 있습니다
+let mediaType: PrintMedia = getMedia('Forbes'); // returns Magazine
+```
+enum은 반환 타입으로도 사용될 수 있습니다
+
+enum은 문자열로 초기화도 가능합니다 문자열 enum은 좀 더 나은 가독성을 제공합니다 
+
 ```ts
-enum Language {
-  English = 0,
-  Spanish = 1
-} 
-
-enum Language {
-  Russian = 2
-} 
-
-enum Language {
-   English = 100,
-   Spanish = 200 + 300
-   Russian  // 타입스크립트가 자동으로 501을 계산해줍니다
-} 
+enum PrintMedia {
+    Newspaper = "NEWSPAPER",
+    Newsletter = "NEWSLETTER",
+    Magazine = "MAGAZINE",
+    Book = "BOOK"
+}
+// Access String Enum 
+PrintMedia.Newspaper; //returns NEWSPAPER
+PrintMedia['Magazine'];//returns MAGAZINE
 ```
+
+문자열 enum은 number와 달리 개별적으로 값을 초기화 해주어야 합니다 
+
+### Objects vs Enums
+
+ object와 as const를 이용하면 Enums을 대신해서 쓸 수 있습니다 
+
+```ts
+const enum EDirection {
+  Up,
+  Down,
+  Left,
+  Right,
+}
+
+const ODirection = {
+  Up: 0,
+  Down: 1,
+  Left: 2,
+  Right: 3,
+} as const; // as const를 쓰지 않으면 Up이 아닌 어떠한 것도 올 수 있습니다, 즉 ? : 0이 됩니다 as const를 쓰므로 UP의 number은 0 인걸 확인 할 수 있습니다
+
+EDirection.Up;  //(enum member) EDirection.Up = 0
+
+ODirection.Up; // (property) Up: 0
+
+// Using the enum as a parameter
+function walk(dir: EDirection) {}
+
+// It requires an extra line to pull out the keys
+type Direction = typeof ODirection[
+  // 1 | 2 | 3 | 4
+  keyof typeof ODirection
+  ];
+function run(dir: Direction) {}
+
+walk(EDirection.Left);
+run(ODirection.Right);
+```
+
+
 

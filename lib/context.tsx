@@ -71,13 +71,13 @@ const initialState: InitialState = {
           subtitle: [
             {
               id: 1,
-              postTitle: 'L Baisc Type',
+              postTitle: 'L 1. Baisc Type',
               date: '2021/06/17',
               linkTo: 'typescriptType',
             },
             {
               id: 2,
-              postTitle: 'L Funtion Type',
+              postTitle: 'L 2. Funtion Type',
               date: '2021/06/18',
               linkTo: 'typescriptFunction',
             },
