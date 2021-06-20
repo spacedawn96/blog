@@ -88,16 +88,10 @@ const initialState: InitialState = {
           title: 'Typescript advance',
           subtitle: [
             {
-              postTitle: 'second post',
-              date: '2021/09/21',
-            },
-            {
-              postTitle: 'second post22',
-              date: '2021/09/21',
-            },
-            {
-              postTitle: 'second post33',
-              date: '2021/09/21',
+              id: 1,
+              postTitle: 'L 1. Advance Types',
+              date: '2021/06/20',
+              linkTo: 'typescriptAdvanceType',
             },
           ],
         },

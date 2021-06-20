@@ -12,11 +12,11 @@ date: 2021-06-19T11:00:00.000Z
 ```ts
 function add(a:number, b:number): number {
     return a + b
-} // 반환 타입은 적지 않아도 된다 보통 타입스크립트가 알아서 추론해 준다
+} // 반환 타입은 적지 않아도 됩니다 보통 타입스크립트가 알아서 추론해 줍니다
 
 ```
 
-### Generic Functions
+### 1. Generic Functions
 
 제네릭은 프로그램을 작성할 때 재사용이 가능하고 유연하며 확장이 가능합니다 
 
@@ -37,7 +37,7 @@ myStrArr.push(500); // Compiler Error
 
 제네릭은 하나의 데이터 타입이 아닌 다양한 데이터 타입으로 호출하거나 사용할 수 있습니다 
  
- ### 타입한정 제네릭
+ ### 2. 타입한정 제네릭
 
 ```ts
 type TreeNode = {
@@ -82,8 +82,40 @@ function mapNode<T extends TreeNode>(
 ```
 
 extends TreeNode의 뜻은 TreeNode이거나 아니면 TreeNode의 서브타입만 올 수 있게 타입을 제한합니다 즉 TreeNode, LeafNode, InnerNode만 올 수 있습니다
-
 만약 extends를 빼고 T라고만 쓰면 T타입의 대한 상한 경계가 없기 때문에 value의값이 뭐든 올 수 있기 때문에 안전하지 않습니다 
-
 T를 아예 사용하지 않고 mapNode를(node: TreeNode, f:(value:string) => string) => TreeNode 처럼 선언하면 매핑되면서 타입 정보가 날아가 a1,b1,c1 모두 TreeNode가 됩니다
+
+### 3. 제네릭 타입 추론
+
+타입스크립트는 대부분의 상황에서 제네릭의 타입을 잘 추론해 줍니다 
+
+```ts
+function map<Input, Output>(arr: Input[], func: (arg: Input) => Output): Output[] {
+  return arr.map(func);
+}
+
+// n은 string으로 parsed는 number[]로 자동적으로 추론해 줍니다
+const parsed = map(["1", "2", "3"], (n) => parseInt(n));
+```
+
+### 4. 함수 오버로딩
+
+typescript는 오버로딩을 지원 합니다
+
+```ts
+function add(a:string, b:string):string;
+
+function add(a:number, b:number): number;
+
+function add(a: any, b:any): any {
+    return a + b;
+}
+
+add("Hello ", "Steve"); // returns "Hello Steve" 
+add(10, 20); // returns 30 
+```
+
+함수 오버로딩은 매개변수와 일치하는 함수가 호출이 됩니다 이름이 다르거나 매개변수가 틀리면 오버로딩은 지원되지 않습니다 
+
+
 

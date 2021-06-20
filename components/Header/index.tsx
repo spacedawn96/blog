@@ -73,13 +73,9 @@ export default function Header(props: HeadereProps) {
               </a>
             </Link>
           </li>
-          <li>
-            <Link href="/">
-              <a>
-                <img src="/signature.png" alt="signature" css={HedaerImg} />
-              </a>
-            </Link>
-          </li>
+          <Link href="/">
+            <img src="/signature.png" alt="signature" css={HedaerImg} />
+          </Link>
           <Icon />
         </ul>
       </nav>
@@ -126,7 +122,6 @@ const HedaerImg = css({
 
   '@media (max-width: 1000px)': {
     width: '9.0625rem',
-    height: '2rem',
   },
 });
 
