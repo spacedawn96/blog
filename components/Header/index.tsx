@@ -73,9 +73,11 @@ export default function Header(props: HeadereProps) {
               </a>
             </Link>
           </li>
-          <Link href="/">
-            <img src="/signature.png" alt="signature" css={HedaerImg} />
-          </Link>
+          <li>
+            <Link href="/">
+              <img src="/signature.png" alt="signature" css={HedaerImg} />
+            </Link>
+          </li>
           <Icon />
         </ul>
       </nav>
@@ -90,18 +92,6 @@ const HeaderBlock = css({
   margin: ' 0 6% 0 10%',
   '@media (max-width: 1000px)': {
     margin: ' 0 6% 0 6%',
-  },
-  ul: {
-    margin: 0,
-    padding: 0,
-  },
-  li: {
-    margin: 0,
-    padding: 0,
-  },
-  a: {
-    margin: 0,
-    padding: 0,
   },
 });
 
@@ -122,6 +112,10 @@ const HedaerImg = css({
 
   '@media (max-width: 1000px)': {
     width: '9.0625rem',
+  },
+
+  '@media (max-width: 768px)': {
+    display: 'none',
   },
 });
 
@@ -150,7 +144,7 @@ const NavList = css({
   '@media (max-width: 1000px)': {
     display: 'flex',
     li: {
-      ':nth-of-type(1)': { flexGrow: 0.1 },
+      ':nth-of-type(1)': { flexGrow: 0.2 },
       ':nth-of-type(2)': { flexGrow: 2 },
       ':nth-of-type(3)': { flexGrow: 0 },
     },
@@ -159,31 +153,19 @@ const NavList = css({
 
   '@media (max-width: 768px)': {
     display: 'flex',
-    li: {
-      ':nth-of-type(1)': { flexGrow: 0.3 },
-      ':nth-of-type(2)': { flexGrow: 2 },
-      ':nth-of-type(3)': { flexGrow: 0 },
-    },
+
     fontSize: '0.9rem',
   },
 
   '@media (max-width: 576px)': {
     display: 'flex',
-    li: {
-      ':nth-of-type(1)': { flexGrow: 0.3 },
-      ':nth-of-type(2)': { flexGrow: 2 },
-      ':nth-of-type(3)': { flexGrow: 0 },
-    },
+
     fontSize: '0.9rem',
   },
 
   '@media (max-width: 400px)': {
     display: 'flex',
-    li: {
-      ':nth-of-type(1)': { flexGrow: 0.6 },
-      ':nth-of-type(2)': { flexGrow: 2 },
-      ':nth-of-type(3)': { flexGrow: 0 },
-    },
+
     fontSize: '0.9rem',
   },
 });

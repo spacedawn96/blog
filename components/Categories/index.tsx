@@ -29,7 +29,7 @@ to {
 `;
 
 const TitleBlock = css({
-  width: '120%',
+  width: '100%',
 
   '&:hover': {
     transition: 'color 0.5s ease',
