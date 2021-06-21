@@ -66,14 +66,17 @@ export default function ArticleList({}: ArticleListProps) {
   } = useContext(SelectContext) as any;
 
   const ReplacePath = router.asPath.replace('/', '');
-  const FilterArticle = filterList.filter((i: any) => i.name == ReplacePath);
+
+  const FilterArticle = filterList.filter(
+    (i: any) => i.name.replace(/(\s*)/g, '') == ReplacePath,
+  );
 
   return (
     <main css={ArticleContainer}>
       <section css={ArticleQuery}>
-        <div css={ArticleWrapper}>
+        <div css={ArticleHeaderWrapper}>
           <h1 css={ArticleTitle}>{FilterArticle[0]?.name}</h1>
-          <p css={ArticleMiddle}>{FilterArticle[0]?.descriable}</p>
+          <p css={ArticleDescriable}>{FilterArticle[0]?.descriable}</p>
         </div>
         {FilterArticle[0]?.post?.map((ele: any) => (
           <Article ele={ele} key={ele.id} />
@@ -106,14 +109,9 @@ const ArticleContainer = css({
   },
   p: {
     fontSize: '1rem',
-    marginTop: '10%',
     fontFamily: '"Nunito Sans", sans-serif',
     lineHeight: '1.5rem',
-    '@media (max-width: 1400px)': {
-      marginTop: '15%',
-    },
-
-    '@media (max-width: 1000px)': {
+    '@media (max-width: 1300px)': {
       marginTop: '3%',
       marginBottom: '0.5rem',
     },
@@ -162,15 +160,27 @@ const ArticleWrapper = css({
   },
   small: {},
 });
+const ArticleHeaderWrapper = css({
+  display: 'flex',
+  color: '#292929',
+  flexDirection: 'column',
+  '@media (max-width: 1000px)': {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  small: {},
+});
 
 const ArticleQuery = css({
+  width: '100%',
   '@media (max-width: 1000px)': {
     marginBottom: '3rem',
   },
 });
 
 const ArticleLeft = css({
-  width: '50%',
+  width: '40%',
+
   // marginLeft: '10%',
   display: 'flex',
   flexDirection: 'column',
@@ -179,10 +189,9 @@ const ArticleLeft = css({
   },
 });
 const ArticleTitle = css({
-  width: '50%',
-  // marginLeft: '10%',
+  width: '40%',
+
   display: 'flex',
-  flexDirection: 'column',
   '@media (max-width: 1000px)': {
     width: '0%',
   },
@@ -190,8 +199,9 @@ const ArticleTitle = css({
 
 const ArticleRight = css({
   display: 'flex',
+
   flexDirection: 'column',
-  width: '50%',
+  width: '40%',
   marginLeft: '20%',
   '@media (max-width: 1000px)': {
     width: '100%',
@@ -199,12 +209,11 @@ const ArticleRight = css({
   },
 });
 
-const ArticleMiddle = css({
+const ArticleDescriable = css({
   display: 'flex',
-  flexDirection: 'column',
-  width: '50%',
-  marginLeft: '20%',
-  '@media (max-width: 1000px)': {
+
+  marginLeft: '60%',
+  '@media (max-width: 1300px)': {
     marginLeft: '0%',
     width: '100%',
   },
