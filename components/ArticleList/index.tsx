@@ -224,7 +224,10 @@ const ArticleItem = css({
   justifyContent: 'space-between',
   padding: '4rem 0',
   alignItems: 'center',
-
+  '&:hover': {
+    transition: 'color 0.5s ease',
+    color: '#ff4400',
+  },
   '@media (max-width: 1000px)': {
     padding: '2rem 0',
   },
