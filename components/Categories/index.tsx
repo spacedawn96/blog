@@ -13,7 +13,9 @@ import Fiber from '../Fiber';
 import { InitialStateItem, SelectContext } from '../../lib/context';
 import { ListTrail } from '../Animation/Trail';
 
-export type CategoriesProps = {};
+export type CategoriesProps = {
+  filterList: InitialStateItem[];
+};
 
 export type TitleProps = {
   list: InitialStateItem;
@@ -104,31 +106,14 @@ function Media(props: TitleProps) {
   );
 }
 
-export default function Categories({}: CategoriesProps) {
-  let {
-    state: { filterList, activeFilter, currentState },
-    dispatch,
-  } = useContext(SelectContext);
-
+export default function Categories(props: CategoriesProps) {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   return (
     <main css={CategoriesStyle}>
       <div css={ProjectList}>
-        {/* {filterList.map((list: InitialStateItem) => (
-          <div key={list.id}>
-            <Title
-              list={list}
-              setActiveIndex={setActiveIndex}
-              filterList={filterList}
-              activeFilter={activeFilter}
-              currentState={currentState}
-            />
-          </div>
-        ))} */}
-
         <ListTrail
-          length={filterList.length}
+          length={props.filterList.length}
           options={{
             opacity: 1,
             height: 37,
@@ -137,7 +122,7 @@ export default function Categories({}: CategoriesProps) {
           }}
           setItemContainerProps={index => ({})}
           renderItem={index => {
-            const category = filterList[index];
+            const category = props.filterList[index];
             return (
               <Link href={{ pathname: `${category.name.replace(/ /g, '')}` }}>
                 <span css={TitleBlock}> {category.name}</span>
@@ -164,14 +149,17 @@ export const CategoriesStyle = css({
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
   fontWeight: 600,
-
   margin: '0 6% 0 10% ',
 
   // img: {
   //   display: 'none',
   // },
   '@media (max-width: 1000px)': {
-    fontSize: '2rem',
+    fontSize: '4rem',
+    margin: '0 6% 0 6% ',
+  },
+  '@media (max-width: 768px)': {
+    fontSize: '2.5rem',
     margin: '0 6% 0 6% ',
   },
 });

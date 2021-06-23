@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTrail, animated } from 'react-spring';
+import { css, keyframes } from '@emotion/react';
 
 interface ListTrailProps {
   length: number;
@@ -26,8 +27,8 @@ export const ListTrail: React.FC<ListTrailProps> = ({
     <>
       {trail.map((style, index) => {
         return (
-          <div style={{ marginBottom: '5rem' }}>
-            <C key={index} style={style} {...setItemContainerProps(index)}>
+          <div css={CategoriesStyle} key={index}>
+            <C style={style} {...setItemContainerProps(index)}>
               {renderItem(index)}
             </C>
           </div>
@@ -36,3 +37,14 @@ export const ListTrail: React.FC<ListTrailProps> = ({
     </>
   );
 };
+
+export const CategoriesStyle = css({
+  marginBottom: '6rem',
+  '@media (max-width: 1000px)': {
+    marginTop: '0rem',
+    marginBottom: '3rem',
+    '@media (max-width: 768px)': {
+      marginBottom: '2rem',
+    },
+  },
+});
