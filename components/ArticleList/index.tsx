@@ -71,6 +71,7 @@ export default function ArticleList({}: ArticleListProps) {
     (i: any) => i.name.replace(/(\s*)/g, '') == ReplacePath,
   );
 
+  console.log(filterList);
   return (
     <main css={ArticleContainer}>
       <section css={ArticleQuery}>

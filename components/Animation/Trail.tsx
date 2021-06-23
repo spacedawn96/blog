@@ -1,26 +1,38 @@
-import { css } from '@emotion/react';
-import React, { useState } from 'react';
-import { useTrail, a } from '@react-spring/web';
+import React from 'react';
+import { useTrail, animated } from 'react-spring';
 
-export type TrailProps = {};
+interface ListTrailProps {
+  length: number;
+  options: Record<string, unknown>;
+  element?: string;
+  setItemContainerProps?: (index: number) => Record<string, unknown>;
+  renderItem: (index: number) => React.ReactNode;
+}
 
-export const Trail: React.FC<{ open?: boolean }> = ({ open, children }) => {
-  const items = React.Children.toArray(children);
-  const trail = useTrail(items.length, {
-    config: { mass: 20, tension: 2000, friction: 200 },
-    opacity: open ? 1 : 0,
-    x: open ? 0 : 20,
-    height: open ? 110 : 0,
-    from: { opacity: 0, x: 10, height: 0 },
+export const ListTrail: React.FC<ListTrailProps> = ({
+  length,
+  options,
+  element = 'li',
+  setItemContainerProps = () => ({}),
+  renderItem,
+}) => {
+  const C = animated[element];
+  const trail = useTrail(length, {
+    config: { mass: 2, tension: 280, friction: 24, clamp: true },
+    ...options,
   });
+
   return (
-    <div>
-      {trail.map(({ height, ...style }, index) => (
-        <a.div key={index} style={style}>
-          <a.div style={{ height }}>{items[index]}</a.div>
-        </a.div>
-      ))}
-    </div>
+    <>
+      {trail.map((style, index) => {
+        return (
+          <div style={{ marginBottom: '5rem' }}>
+            <C key={index} style={style} {...setItemContainerProps(index)}>
+              {renderItem(index)}
+            </C>
+          </div>
+        );
+      })}
+    </>
   );
 };
-const TrailStyle = css({});

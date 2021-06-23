@@ -1,19 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { css } from '@emotion/react';
-import Image from 'next/image';
 import Icon from '../Icon';
 import { useRouter } from 'next/router';
-import { useTrail, a } from '@react-spring/web';
-import { Trail } from '../Animation/Trail';
-import { CgDarkMode } from 'react-icons/cg';
-
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 export type HeadereProps = {};
 
 export type LinkeProps = {
-  href: any;
-  children: any;
+  href: string;
+  children: React.ReactNode;
 };
 
 const Link = (props: LinkeProps) => {
@@ -40,10 +34,7 @@ const Link = (props: LinkeProps) => {
 };
 
 export default function Header(props: HeadereProps) {
-  const [open, set] = useState(true);
   const router = useRouter();
-
-  const [isSelect, setIsSelect] = useState(false);
 
   return (
     <header css={HeaderBlock}>

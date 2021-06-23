@@ -1,32 +1,31 @@
 import { css, keyframes } from '@emotion/react';
-import { useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from 'react';
 import Link from 'next/link';
 import Fiber from '../Fiber';
-import { SelectContext } from '../../lib/context';
-import { Trail } from '../Animation/Trail';
+import { InitialStateItem, SelectContext } from '../../lib/context';
+import { ListTrail } from '../Animation/Trail';
+
 export type CategoriesProps = {};
 
 export type TitleProps = {
-  list: any;
-  setActiveIndex?: any;
-  activeIndex?: any;
-  active?: any;
-  x?: any;
-  y?: any;
-  dispatch: any;
-  filterList: any;
-  activeFilter: any;
-  currentState: any;
+  list: InitialStateItem;
+  setActiveIndex?: Dispatch<SetStateAction<number>>;
+  activeIndex?: number;
+  active?: boolean;
+  x?: number;
+  y?: number;
+  filterList: InitialStateItem[];
+  activeFilter: string[];
+  currentState: string[];
 };
-
-const fadeinHover = keyframes`
-from {
-  opacity: 0;
-}
-to {
-  opacity: 1;
-}
-`;
 
 const TitleBlock = css({
   width: '100%',
@@ -38,7 +37,7 @@ const TitleBlock = css({
 });
 
 const MedeiaBlock = css({});
-const ProjectName = css({});
+const TitleWrapper = css({});
 
 const ProjectTitle = css({
   transition: 'opacity .35s cubic-bezier(.77,0,0.175,1),',
@@ -58,22 +57,6 @@ const useMousePosition = () => {
 
   return mousePosition;
 };
-
-//onMouseEnter={() => props.setActiveIndex(props.index)}
-//onMouseLeave={() => props.setActiveIndex(-1)}
-function Title(props: TitleProps) {
-  const TrimTitle = props.list.name.replace(/ /g, '');
-
-  return (
-    <Link href={{ pathname: `${TrimTitle}` }}>
-      <div className="project-list" css={TitleBlock}>
-        <div css={ProjectTitle} className="project-title">
-          <span css={ProjectName}> {props.list.name}</span>
-        </div>
-      </div>
-    </Link>
-  );
-}
 
 const getDimensionObject = (node: { getBoundingClientRect: () => any } | null) => {
   const rect = node?.getBoundingClientRect();
@@ -125,48 +108,44 @@ export default function Categories({}: CategoriesProps) {
   let {
     state: { filterList, activeFilter, currentState },
     dispatch,
-  } = useContext(SelectContext) as any;
+  } = useContext(SelectContext);
 
   const [activeIndex, setActiveIndex] = useState(-1);
 
   return (
     <main css={CategoriesStyle}>
       <div css={ProjectList}>
-        {filterList.map((list: any) => (
+        {/* {filterList.map((list: InitialStateItem) => (
           <div key={list.id}>
             <Title
               list={list}
               setActiveIndex={setActiveIndex}
-              dispatch={dispatch}
               filterList={filterList}
               activeFilter={activeFilter}
               currentState={currentState}
             />
           </div>
-        ))}
-      </div>
+        ))} */}
 
-      <div css={FiberBlock}>
-        <Fiber />
+        <ListTrail
+          length={filterList.length}
+          options={{
+            opacity: 1,
+            height: 37,
+            x: 0,
+            from: { opacity: 0, height: 0, x: -20 },
+          }}
+          setItemContainerProps={index => ({})}
+          renderItem={index => {
+            const category = filterList[index];
+            return (
+              <Link href={{ pathname: `${category.name.replace(/ /g, '')}` }}>
+                <span css={TitleBlock}> {category.name}</span>
+              </Link>
+            );
+          }}
+        />
       </div>
-
-      {/* <div css={MediaContainer}>
-        {initialState?.filterList.map((title, index) => {
-          const isActive = index == activeIndex;
-          const xPos = isActive ? x : 0;
-          const yPos = isActive ? y : 0;
-          return (
-            <Media
-              active={isActive}
-              title={title}
-              index={index}
-              x={xPos}
-              y={yPos}
-              key={title.id}
-            />
-          );
-        })}
-      </div> */}
     </main>
   );
 }
@@ -185,6 +164,7 @@ export const CategoriesStyle = css({
   animationFillMode: 'both',
   animationTimingFunction: 'ease',
   fontWeight: 600,
+
   margin: '0 6% 0 10% ',
 
   // img: {

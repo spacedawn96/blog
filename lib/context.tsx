@@ -1,20 +1,33 @@
 import { createContext, useReducer } from 'react';
 
-interface InitialStateItem {
+interface PostSubTitleItem {
+  id?: number;
+  postTitle?: string;
+  date?: string;
+  linkTo?: string;
+}
+
+interface PostItem {
+  id: number;
+  title: string;
+  subtitle: PostSubTitleItem[];
+}
+
+export interface InitialStateItem {
   id: number;
   name: string;
   url: string;
   descriable: string;
-  post?: any;
+  post?: PostItem[];
 }
 
 interface InitialState {
   filterList: InitialStateItem[];
-  activeFilter: any;
-  currentState: any;
+  activeFilter: string[];
+  currentState: string[];
 }
 
-const initialState: InitialState = {
+export const initialState: InitialState = {
   filterList: [
     {
       id: 1,
