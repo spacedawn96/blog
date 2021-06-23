@@ -4,8 +4,6 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
-import { Trail } from '../Animation/Trail';
-
 export type ArticleListProps = {};
 
 export type ArticleProps = {

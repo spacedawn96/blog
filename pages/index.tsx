@@ -7,7 +7,6 @@ import Header from '../components/Header';
 import Categories from '../components/Categories';
 import { css } from '@emotion/react';
 import Footer from '../components/Footer';
-import { Trail } from '../components/Animation/Trail';
 import { useState } from 'react';
 import AppLayout from '../components/AppLayout';
 
