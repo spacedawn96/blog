@@ -26,10 +26,10 @@ const CloumnLayoutLedft = css({
 const CloumnLayoutBlock = css({
   display: 'flex',
   width: '100%',
+  alignContent: 'flex-start',
 });
 
 const CloumnLayoutWrapper = css({
   position: 'absolute',
-
-  left: '60%',
+  left: '55%',
 });

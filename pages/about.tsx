@@ -3,15 +3,16 @@ import { css } from '@emotion/react';
 import Header from '../components/Header';
 import About from '../components/About';
 import Footer from '../components/Footer';
+import AppLayout from '../components/AppLayout';
 
 export type AboutPageProps = {};
 
 export default function AboutPage({}: AboutPageProps) {
   return (
     <div css={AboutPageStyle}>
-      <Header />
-      <About />
-      <Footer />
+      <AppLayout>
+        <About />
+      </AppLayout>
     </div>
   );
 }

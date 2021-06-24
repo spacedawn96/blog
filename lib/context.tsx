@@ -1,13 +1,13 @@
 import { createContext, useReducer } from 'react';
 
-interface PostSubTitleItem {
+export interface PostSubTitleItem {
   id?: number;
   postTitle?: string;
   date?: string;
   linkTo?: string;
 }
 
-interface PostItem {
+export interface PostItem {
   id: number;
   title: string;
   subtitle: PostSubTitleItem[];

@@ -98,7 +98,7 @@ export default function Fiber() {
 
 const FiberContainer = css({
   width: '32rem',
-  height: '40rem',
+  height: '30rem',
   '@media (max-width: 1500px)': {
     display: 'none',
   },
