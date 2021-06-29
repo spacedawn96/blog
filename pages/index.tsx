@@ -38,7 +38,7 @@ export default function Home({}) {
             </main>
           </div>
         }
-        rightNode={<Fiber />}
+        rightNode={<> </>}
       />
       <div css={IndexBlock}>
         <Footer />

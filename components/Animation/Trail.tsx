@@ -39,11 +39,10 @@ export const ListTrail: React.FC<ListTrailProps> = ({
 };
 
 export const CategoriesStyle = css({
-  marginBottom: '6rem',
+  marginBottom: '10rem',
   '@media (max-width: 1000px)': {
-    marginTop: '0rem',
-    marginBottom: '3rem',
-    '@media (max-width: 768px)': {
+    marginBottom: '6rem',
+    '@media (max-width: 576px)': {
       marginBottom: '2rem',
     },
   },

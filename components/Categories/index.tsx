@@ -110,28 +110,44 @@ export default function Categories(props: CategoriesProps) {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   return (
-    <main css={CategoriesStyle}>
-      <div css={ProjectList}>
-        <ListTrail
-          length={props.filterList.length}
-          options={{
-            opacity: 1,
-            height: 37,
-            x: 0,
-            from: { opacity: 0, height: 0, x: -20 },
-          }}
-          setItemContainerProps={index => ({})}
-          renderItem={index => {
-            const category = props.filterList[index];
-            return (
-              <Link href={{ pathname: `${category.name.replace(/ /g, '')}` }}>
-                <span css={TitleBlock}> {category.name}</span>
-              </Link>
-            );
-          }}
-        />
-      </div>
-    </main>
+    <div css={listWapper}>
+      <ListTrail
+        length={props.filterList.length}
+        options={{
+          opacity: 1,
+          height: 37,
+          x: 0,
+          from: { opacity: 0, height: 0, x: -20 },
+        }}
+        setItemContainerProps={index => ({})}
+        renderItem={index => {
+          const category = props.filterList[index];
+          return (
+            <Link href={{ pathname: `${category.name.replace(/ /g, '')}` }}>
+              <nav className="menu">
+                <div className="menu__item">
+                  <div className="menu__item-link">{category.name}</div>
+                  <img
+                    className="menu__item-img"
+                    src={category.url}
+                    alt="Some image"
+                    css={listImg}
+                  />
+                  <div className="marquee">
+                    <div className="marquee__inner" aria-hidden="true">
+                      <span>{category.name}</span>
+                      <span>{category.name}</span>
+                      <span>{category.name}</span>
+                      <span>{category.name}</span>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </Link>
+          );
+        }}
+      />
+    </div>
   );
 }
 
@@ -158,7 +174,7 @@ export const CategoriesStyle = css({
     fontSize: '4rem',
     margin: '0 6% 0 6% ',
   },
-  '@media (max-width: 768px)': {
+  '@media (max-width: 576px)': {
     fontSize: '2.5rem',
     margin: '0 6% 0 6% ',
   },
@@ -176,6 +192,25 @@ export const ProjectList = css({
   '@media (max-width: 1000px)': {
     marginTop: '0rem',
     marginBottom: '6rem',
+  },
+});
+
+export const listImg = css({
+  '@media (max-width: 1000px)': {
+    display: 'none',
+  },
+});
+
+export const listWapper = css({
+  fontSize: '10rem',
+  margin: '0 6% 0 10% ',
+  '@media (max-width: 1000px)': {
+    fontSize: '6rem',
+    margin: '0 6% 0 6% ',
+  },
+  '@media (max-width: 576px)': {
+    fontSize: '3rem',
+    margin: '0 6% 0 6% ',
   },
 });
 

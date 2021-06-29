@@ -4,6 +4,7 @@ import '../assets/main.css';
 import 'typeface-open-sans';
 import 'typeface-merriweather';
 import '../assets/global.css';
+import '../assets/list.css';
 import SelectContextProvider from '../lib/context';
 
 export default function MyApp({ Component, pageProps }) {
