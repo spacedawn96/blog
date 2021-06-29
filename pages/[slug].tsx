@@ -159,12 +159,12 @@ const ArticleContainer = css({
   small: {
     fontSize: '3rem',
     cursor: 'pointer',
-    '@media (max-width: 1600px)': {
-      fontSize: '1.5rem',
+    '@media (max-width: 1500px)': {
+      fontSize: '2rem',
     },
 
-    '@media (max-width: 576px)': {
-      fontSize: '1.3rem',
+    '@media (max-width: 1200px)': {
+      fontSize: '2rem',
     },
   },
 

@@ -122,7 +122,7 @@ export default function Categories(props: CategoriesProps) {
         setItemContainerProps={index => ({})}
         renderItem={index => {
           const category = props.filterList[index];
-          return (
+          return category.name ? (
             <Link href={{ pathname: `${category.name.replace(/ /g, '')}` }}>
               <nav className="menu">
                 <div className="menu__item">
@@ -144,6 +144,8 @@ export default function Categories(props: CategoriesProps) {
                 </div>
               </nav>
             </Link>
+          ) : (
+            'welcome!'
           );
         }}
       />
