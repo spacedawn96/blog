@@ -199,7 +199,7 @@ const ArticleTitle = css({
   width: '40%',
 
   display: 'flex',
-  '@media (max-width: 1000px)': {
+  '@media (max-width: 1300px)': {
     width: '0%',
   },
 });
@@ -210,7 +210,7 @@ const ArticleRight = css({
   flexDirection: 'column',
   width: '40%',
   marginLeft: '15%',
-  '@media (max-width: 1000px)': {
+  '@media (max-width: 1300px)': {
     width: '100%',
     marginLeft: '0%',
   },
@@ -230,7 +230,7 @@ const ArticleWrapper = css({
   display: 'flex',
   color: '#292929',
 
-  '@media (max-width: 1000px)': {
+  '@media (max-width: 1300px)': {
     display: 'flex',
     flexDirection: 'column',
   },
@@ -243,7 +243,7 @@ const ArticleLeft = css({
   // marginLeft: '10%',
   display: 'flex',
   flexDirection: 'column',
-  '@media (max-width: 1000px)': {
+  '@media (max-width: 1300px)': {
     width: '100%',
   },
 });
