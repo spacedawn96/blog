@@ -89,7 +89,7 @@ const HeaderBlock = css({
 const Nav = css({
   width: '100%',
   marginTop: '4rem',
-  marginBottom: '2rem',
+  marginBottom: '0rem',
   zIndex: 22,
 
   '@media (max-width: 1000px)': {

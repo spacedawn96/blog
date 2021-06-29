@@ -179,6 +179,7 @@ const ArticleContainer = css({
 const ArticleHeaderWrapper = css({
   display: 'flex',
   color: '#292929',
+  marginTop: '2rem',
   flexDirection: 'column',
   '@media (max-width: 1000px)': {
     display: 'flex',
@@ -208,7 +209,7 @@ const ArticleRight = css({
 
   flexDirection: 'column',
   width: '40%',
-  marginLeft: '20%',
+  marginLeft: '15%',
   '@media (max-width: 1000px)': {
     width: '100%',
     marginLeft: '0%',
@@ -237,7 +238,7 @@ const ArticleWrapper = css({
 });
 
 const ArticleLeft = css({
-  width: '40%',
+  width: '45%',
 
   // marginLeft: '10%',
   display: 'flex',
@@ -265,7 +266,7 @@ const ArticleItem = css({
   },
 
   small: {
-    width: '70%',
+    width: '80%',
     height: 'auto',
     wordWrap: 'break-word',
     '@media (max-width: 576px)': {

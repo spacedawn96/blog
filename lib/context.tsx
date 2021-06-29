@@ -82,6 +82,12 @@ export const initialState: InitialState = {
               date: '2021/06/18',
               linkTo: 'typescriptFunction',
             },
+            {
+              id: 3,
+              postTitle: 'R 2. Funtion Type',
+              date: '2021/06/18',
+              linkTo: 'typescriptFunction',
+            },
           ],
         },
         {

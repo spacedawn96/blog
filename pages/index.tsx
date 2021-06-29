@@ -49,9 +49,4 @@ export default function Home({}) {
 
 const IndexBlock = css({
   marginTop: '13rem',
-  '@media (max-width: 1000px)': {
-    position: 'absolute',
-    bottom: '0',
-    margin: '0 6% 0 6%',
-  },
 });
