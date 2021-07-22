@@ -10,13 +10,10 @@ import { useContext, useState } from 'react';
 import ColumnLayout from '../components/ColumnLayout';
 import Fiber from '../components/Fiber';
 import { InitialStateItem, SelectContext } from '../lib/context';
+import { getAllPosts } from '@/lib/api';
 
-export default function Home({}) {
+export default function Home({ allPosts, jsonFile }) {
   const [open, set] = useState(true);
-  let {
-    state: { filterList, activeFilter, currentState },
-    dispatch,
-  } = useContext(SelectContext);
 
   return (
     <>
@@ -33,7 +30,7 @@ export default function Home({}) {
                     {'gettingArticle'}
                   </div>
                 }>
-                <Categories filterList={filterList} />
+                <Categories filterList={jsonFile.posts?.filterList} />
               </InfiniteScroll>
             </main>
           </div>
@@ -43,6 +40,7 @@ export default function Home({}) {
       <div css={IndexBlock}>
         <Footer />
       </div>
+      <div>hello</div>
     </>
   );
 }
@@ -50,3 +48,28 @@ export default function Home({}) {
 const IndexBlock = css({
   marginTop: '13rem',
 });
+
+export async function getStaticProps() {
+  const content = await import(`../data/config.json`);
+  const posts = await import(`../data/post.js`);
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+    'about',
+  ]);
+
+  return {
+    props: {
+      allPosts,
+      jsonFile: {
+        fileRelativePath: `data/config.json`,
+        data: content.default,
+        posts: posts.default,
+      },
+    },
+  };
+}

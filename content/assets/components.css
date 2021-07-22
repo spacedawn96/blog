@@ -1,0 +1,24 @@
+.blur {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 500ms ease-in, -webkit-filter 500ms ease-in;
+}
+
+.blur.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+};
+li {
+  margin: 0;
+  padding: 0;
+};
+a {
+  margin: 0;
+  padding: 0;
+};
+

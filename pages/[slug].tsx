@@ -14,11 +14,24 @@ import {
 import { useRouter } from 'next/router';
 import { ListTrail } from '../components/Animation/Trail';
 import Link from 'next/link';
+import { getAllPosts } from '@/lib/api';
 
 export type ArticleHeaderProps = {
   i: PostSubTitleItem;
   isRight: boolean;
 };
+
+const Title = [
+  {
+    slug: 'React',
+  },
+  {
+    slug: 'Javascript',
+  },
+  {
+    slug: 'Typescript',
+  },
+];
 
 const ArticleListItem = (props: ArticleHeaderProps) => {
   return (
@@ -39,16 +52,11 @@ const ArticleListItem = (props: ArticleHeaderProps) => {
   );
 };
 
-export default function BlogList() {
-  let {
-    state: { filterList, activeFilter, currentState },
-    dispatch,
-  } = useContext(SelectContext);
-
+export default function BlogList({ jsonFile }) {
   const router = useRouter();
   const ReplacePath = router.asPath.replace('/', '');
 
-  const FilterArticle = filterList.filter(
+  const FilterArticle = jsonFile.posts?.filterList.filter(
     (i: InitialStateItem) => i.name.replace(/(\s*)/g, '') == ReplacePath,
   );
 
@@ -112,6 +120,45 @@ export default function BlogList() {
     </>
   );
 }
+
+export async function getStaticProps() {
+  const content = await import(`../data/config.json`);
+  const posts = await import(`../data/post.js`);
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+    'about',
+  ]);
+
+  return {
+    props: {
+      allPosts,
+      jsonFile: {
+        fileRelativePath: `data/config.json`,
+        data: content.default,
+        posts: posts.default,
+      },
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = Title.map(i => {
+    return {
+      params: { slug: i.slug },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
 const BlogListBlock = css({
   marginTop: '6rem',
 });

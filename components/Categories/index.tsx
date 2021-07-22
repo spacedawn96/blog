@@ -112,7 +112,7 @@ export default function Categories(props: CategoriesProps) {
   return (
     <div css={listWapper}>
       <ListTrail
-        length={props.filterList.length}
+        length={props.filterList?.length}
         options={{
           opacity: 1,
           height: 37,

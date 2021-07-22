@@ -1,34 +1,4 @@
-import { createContext, useReducer } from 'react';
-
-export interface PostSubTitleItem {
-  id?: number;
-  postTitle?: string;
-  date?: string;
-  linkTo?: string;
-}
-
-export interface PostItem {
-  id: number;
-  title: string;
-  subtitle: PostSubTitleItem[];
-}
-
-export interface InitialStateItem {
-  [x: string]: any;
-  id: number;
-  name: string;
-  url: string;
-  descriable: string;
-  post?: PostItem[];
-}
-
-interface InitialState {
-  filterList: InitialStateItem[];
-  activeFilter: string[];
-  currentState: string[];
-}
-
-export const initialState: InitialState = {
+export default {
   filterList: [
     {
       id: 1,
@@ -109,20 +79,3 @@ export const initialState: InitialState = {
   activeFilter: [],
   currentState: [],
 };
-
-function reducer(state: InitialState, action: any) {
-  return { ...state, ...action };
-}
-export const SelectContext = createContext(null);
-
-const SelectContextProvider = (props: any) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  return (
-    <SelectContext.Provider value={{ state, dispatch } as any}>
-      {props.children}
-    </SelectContext.Provider>
-  );
-};
-
-export default SelectContextProvider;
